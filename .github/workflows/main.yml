@@ -1,3 +1,25 @@
+name: Deploy HTML Files to AppService - CMST385
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          # Change the app-name to the name of your App Service (e.g. 'CMST385-UMGC-cstacy3')
+          app-name: 'CMST385-UMGC-cstacy3'
+          slot-name: 'production'
+          # Set this secret in your repository: Settings -> Secrets -> Actions
+          publish-profile: ${{ secrets.AppServiceCMST385 }}
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 
 # More GitHub Actions for Azure: https://github.com/Azure/actions
