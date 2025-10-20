@@ -17,6 +17,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3  # Use the latest stable version
         with:
-          app-name: 'CMST385-Project1'  # Ensure this matches your Azure app name
+          app-name: 'CMST385-UMGC-cstacy3'  # Ensure this matches your Azure app name
           slot-name: 'production'
           publish-profile: ${{ secrets.AppServiceCMST385 }}  # Ensure this secret exists in your repo
