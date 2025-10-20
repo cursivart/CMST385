@@ -12,33 +12,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Verify publish-profile secret
+        run: |
+          if [ -z "${PUBLISH_PROFILE}" ]; then
+            echo "Required secret 'AppServiceCMST385' is not set. Add it under Settings -> Secrets -> Actions and try again." >&2
+            exit 1
+          fi
+        env:
+          PUBLISH_PROFILE: ${{ secrets.AppServiceCMST385 }}
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          # Change the app-name to the name of your App Service (e.g. 'CMST385-UMGC-cstacy3')
           app-name: 'CMST385-UMGC-cstacy3'
           slot-name: 'production'
-          # Set this secret in your repository: Settings -> Secrets -> Actions
           publish-profile: ${{ secrets.AppServiceCMST385 }}
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Deploy HTML Files to AppService - CMST385
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build-and-deploy:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4  # Use latest stable version
-
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3  # Use the latest stable version
-        with:
-          app-name: 'CMST385-UMGC-cstacy3'  # Ensure this matches your Azure app name
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AppServiceCMST385 }}  # Ensure this secret exists in your repo
