@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* CSS Document */
+
+		h1  {
+			font-family: "Texturina", Georgia, serif;
+			color: #192130;
+            font-size: 50px;
+						filter: drop-shadow(10px 10px 2px #94AAC4);
+			}
+
+		h2  {
+			font-family: "Texturina", Georgia, serif;
+			color: #192130;
+            font-size: 40px;
+			}
+
+		h3  {
+			font-family: "Texturina", Georgia, serif;
+			color: #192130;
+            font-size: 30px;
+			}
+
+		i  {
+			font-style: oblique;
+			}
+
+		p.bold  {
+			font-family: "Texturina";
+			font-weight: 900;
+			}
+
+		a {
+			font-color:cadetblue;
+			text-decoration: underline;
+			}
+
+		a:active {
+			color:cadetblue;
+			text-decoration: underline;
+			}
+
+		a:hover {
+			color:coral;
+			text-decoration: underline;
+			}
+
+		a:visited {
+			color:#172132;
+			text-decoration: underline;
+			}
+
+		body  {
+			background-image: url("../imgs/pexels-xperimental-978844 1.jpg");
+			background-repeat: no-repeat;
+			background-size: cover-height;
+			background-position: center;
+			
+			
+			font-family: "Texturina", Georgia, serif;
+			color: #190F04;
+			font-size: 25px;
+			}
+
+		table  {
+			justify-content: center;
+			vertical-align: center;
+			position:inherit;
+			top: 50%;
+			}
+
+		th, td {
+  			text-align: center;
+			text-justify: center;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 25px;
+			overflow: none;
+			}
+
+		div.header-wrapper {
+			justify-content: center;
+			display: flex;
+			align-items: center;
+			background-color: #172132;
+			width: 100%;
+			height: 50px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			}
+
+		div.header-content {
+			font-family: "Texturina";
+			font-weight: 900;
+			text-align: center;
+			text-justify: center;
+			position:inherit;
+			top: 15%;
+			overflow: auto;
+			vertical-align: center;
+			color:aliceblue;
+			font-size: 20px;
+			}
+
+		div.logo-container  {
+			background-image: url("../../../Personal Brand/CAS Logo_Circle Initials_White.png");
+			background-size: contain;
+			vertical-align: middle;
+			position:inherit;
+			left: 1%;
+			width: 30px;
+			height: 30px;
+			}
+
+		div.attribution  {
+			position: fixed;
+			right: 0%;
+			bottom: 0%;
+			width: 100%;
+			height: 50px;
+			text-align: right;
+			margin: 10px;
+			vertical-align: middle;
+			
+			font-family: sans-serif;
+			color: #172132;
+			font-size: 10px;
+			}
