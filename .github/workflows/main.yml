@@ -19,27 +19,17 @@ on:
       - main
 
 jobs:
-
   build-and-deploy:
-
     runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-     steps:
-
-    - uses: actions/checkout@main
-
-    - name: Deploy to Azure Web App
-
-      uses: azure/webapps-deploy@v1
-
-      with:
-
-      #Change the app-name to match what was provided to you in the publish settings file, this is in a naming convention of 'COURSENAME-STUDENTUID'
-
-        app-name: 'CMST385-UMGC-cstacy3'
-
-        slot-name: 'production'
-
-      #Change the publish profile to match what you named your secret setup in GitHub, Example shown below
-
-        publish-profile: ${{ ['secrets.APPSERVICECMST385-UMGC'] }}
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v1
+        with:
+          # Change the app-name to match what was provided to you in the publish settings file
+          app-name: 'CMST385-UMGC-cstacy3'
+          slot-name: 'production'
+          # Publish profile secret (set this in the repository settings -> Secrets -> Actions)
+          publish-profile: ${{ secrets.AppServiceCMST385 }}
