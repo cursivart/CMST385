@@ -116,7 +116,7 @@
 			background-image: url("../imgs/CAS_Logo_Circle_Initials_White-copy.png");
 			background-size: contain;
 			vertical-align: middle;
-			position:inherit;
+			position:fixed;
 			left: 1%;
 			width: 30px;
 			height: 30px;
