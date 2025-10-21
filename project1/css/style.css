@@ -61,7 +61,7 @@
 			background-image: url("../imgs/pexels-xperimental-978844-1.jpg");
 			background-repeat: no-repeat;
 			background-size: cover;
-			min-height: fit-content
+			min-height: 100vh;
 			background-position: center center;
 			
 			
