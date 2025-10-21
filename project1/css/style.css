@@ -93,6 +93,7 @@
 			justify-content: center;
 			display: flex;
 			align-items: center;
+			vertical-align: middle;
 			background-color: #172132;
 			width: 100%;
 			height: 50px;
@@ -108,8 +109,6 @@
 			text-align: center;
 			text-justify: center;
 			position:inherit;
-			top: 15%;
-			overflow: auto;
 			vertical-align: middle;
 			color:aliceblue;
 			font-size: 20px;
@@ -117,7 +116,7 @@
 			}
 
 		div.logo-container  {
-			background-image: url("/Users/christianstacy/Documents/GitHub/CMST385/project1/imgs/CAS-Logo_Circle-Initials_White-copy.png");
+			background-image: url("../imgs/CAS-Logo_Circle-Initials_White-copy.png");
 			background-size: contain;
 			vertical-align: middle;
 			position:fixed;
