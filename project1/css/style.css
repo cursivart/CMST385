@@ -99,12 +99,16 @@
 			top: 0px;
 			left: 0px;
 			z-index: 2;
+			padding: 0 3rem;
 			}
 		div.header-content {
 			font-family: "Texturina";
 			font-weight: 900;
 			text-align: center;
-			text-justify: center;
+			/* prevent line breaks */
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 			position:inherit;
 			vertical-align: middle;
 			color:aliceblue;
