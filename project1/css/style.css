@@ -116,7 +116,7 @@
 			}
 
 		div.logo-container  {
-			background-image: url("/Users/christianstacy/Documents/GitHub/CMST385/project1/imgs/CAS-Logo_Circle-Initials_White-copy.png");
+			background-image: url("project1/imgs/CAS-Logo.png");
 			background-size: contain;
 			vertical-align: middle;
 			position:fixed;
