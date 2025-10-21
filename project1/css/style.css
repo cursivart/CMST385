@@ -5,7 +5,15 @@
 			font-family: "Texturina", Georgia, serif;
 			color: #192130;
             font-size: 50px;
-						filter: drop-shadow(10px 10px 2px #94AAC4);
+			filter: drop-shadow(10px 10px 2px #94AAC4);
+			}
+
+		h1.bold  {
+			font-family: "Texturina", Georgia, serif;
+			font-weight: 900;
+			color: #192130;
+            font-size: 50px;
+			filter: drop-shadow(10px 10px 2px #94AAC4);
 			}
 
 		h2  {
@@ -24,13 +32,13 @@
 			font-style: oblique;
 			}
 
-		p.bold  {
+		p  {
 			font-family: "Texturina";
-			font-weight: 900;
+			font-weight: 300;
 			}
 
 		a {
-			font-color:cadetblue;
+			color:cadetblue;
 			text-decoration: underline;
 			}
 
@@ -63,7 +71,7 @@
 
 		table  {
 			justify-content: center;
-			vertical-align: center;
+			vertical-align: middle;
 			position:inherit;
 			top: 50%;
 			}
@@ -75,7 +83,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			padding: 25px;
-			overflow: none;
+			overflow: hidden;
 			}
 
 		div.header-wrapper {
@@ -98,7 +106,7 @@
 			position:inherit;
 			top: 15%;
 			overflow: auto;
-			vertical-align: center;
+			vertical-align: middle;
 			color:aliceblue;
 			font-size: 20px;
 			}
