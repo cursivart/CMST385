@@ -81,7 +81,6 @@
 
 		th, td {
   			text-align: center;
-			text-justify: center;
 			width: 80%;
 			margin-left: auto;
 			margin-right: auto;
@@ -101,6 +100,7 @@
 			top: 0px;
 			left: 0px;
 			z-index: 2;
+			overflow-x: auto;
 			}
 
 		div.header-content {
@@ -113,7 +113,6 @@
 			color:aliceblue;
 			font-size: 20px;
 			z-index: inherit;
-			overflow-x: auto;
 			}
 
 		div.logo-container  {
