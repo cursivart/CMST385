@@ -60,8 +60,8 @@
 		body  {
 			background-image: url("../imgs/pexels-xperimental-978844-1.jpg");
 			background-repeat: no-repeat;
-			background-size: calc(100% auto);
-			background-position: center;
+			background-size: cover;
+			background-position: center center;
 			
 			
 			font-family: "Texturina", Georgia, serif;
