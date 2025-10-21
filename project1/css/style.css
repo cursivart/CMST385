@@ -116,8 +116,6 @@
 			}
 
 		div.logo-container  {
-			background-image: url("../imgs/CAS-Logo.png");
-			background-size: contain;
 			vertical-align: middle;
 			position:fixed;
 			left: 1%;
@@ -141,4 +139,3 @@
 			font-size: 10px;
 			z-index: 2;
 			}
-			
