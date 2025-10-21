@@ -32,4 +32,4 @@ jobs:
           app-name: 'CMST385-UMGC-cstacy3'
           slot-name: 'production'
           # Publish profile secret (set this in the repository settings -> Secrets -> Actions)
-          publish-profile: ${{ secrets.AppServiceCMST385 }}
+          publish-profile: ${{ secrets.APPSERVICECMST385 }}
