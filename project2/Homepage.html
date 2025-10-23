@@ -4,29 +4,74 @@
 		<meta charset="UTF-8">
 		<title>Home | Pizza Jam</title>
 		<style type="text/css">
-			#slider-banner-bg {
-				background-color:#D2311A;
-				width: 100vw;
-				height: 50vh;
-				position: fixed;
-				top:0px;
-				left:0px;
-				z-index:3;
+			
+			section.body {
+				display: block;
+				margin-left: 5vw;
+				margin-right: 5vw;
+				width: 90vw;
 			}
 			
-			#hero-image {
-				background-image: url("imgs/3752509-hd_1920_1080_24fps.mp4");
+			section.body-content-container {
+				background-color:gainsboro;
+				height: auto;
+			}
+			
+			section.body-content {
+				padding: 5%;
+				font-display: block;
+				font-size: 1.25rem;
+				display: grid;
+				grid-template-columns: auto auto;
+				grid-gap: 10rem;
+			}
+			
+			h1 {
+				font-size: 3rem;
+			}
+			
+			h2 {
+				font-size: 2.5rem;
+			}
+			
+			h3 {
+				font-size: 2rem;
+			}
+			
+			section.slider-banner-container {
+				background-color:#D2311A;
+				height: 50vh;
+			}
+			
+			section.hero-image {
+				background-color:#1E4028;
 				background-size: contain;
-				background-position: top;
+				background-position: center;
 				height: 100vh;
-				width: 100vw;
-				z-index: 2;
+			}
+			
+			body {
+				background-color:darkslategray;
+				
 			}
 			
 		</style>
 	</head>
 	<body>
-		<div id="slider-banner-bg"></div>
-		<div id="hero-image"></div>
+		<section class="body">
+		<section class="slider-banner-container"></section>
+		<section class="hero-image"></section>
+		
+		<section class="body-content-container">
+			<section class="body-content">
+			<h1> It's Pizza Time.</h1>
+				
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae vehicula odio. Duis iaculis convallis nisi a commodo. Nunc posuere massa aliquet, auctor leo quis, euismod turpis. Sed purus lectus, facilisis quis bibendum et, fermentum ut lacus. Morbi maximus sollicitudin faucibus. Sed viverra erat in ligula luctus mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+Aenean tincidunt massa et eros porta, sodales imperdiet nunc pulvinar. Ut semper ex ac libero rutrum, nec pretium nulla tempor. Integer semper nunc diam, eget blandit mauris dapibus id. Aliquam vel lobortis sapien. Donec ac sodales ipsum. Sed a orci hendrerit, tincidunt dui id, porttitor quam. Sed auctor augue at velit vestibulum, nec gravida risus pretium. Donec euismod libero mi, non faucibus nisi lobortis non. Pellentesque ullamcorper sit amet dui eu luctus. Suspendisse aliquet maximus sapien, non dapibus sapien ultrices ac.
+			</section>
+		</section>
+			
+		</section>
 	</body>
 </html>
