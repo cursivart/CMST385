@@ -17,8 +17,10 @@
 			.body-grid-container {
 				display: grid;
 				grid-gap: 1rem;
-				grid-template-columns: 1fr 1fr 1fr;
-				grid-template-rows: 1fr 1fr 1fr;
+				min-width: 0rem;
+				min-height: 0rem;
+				grid-template-columns: auto;
+				grid-template-rows: auto;
 				grid-template-areas:
 					"item1 item1 item1"
 					"item2 item3 item4"
@@ -28,6 +30,30 @@
 					"item7 item8 item8"
 					"item9 item9 item9"
 					"item10 item11 item12";
+			}
+			
+			@media(max-width : 600px ){
+				.body-grid-container{
+				display: grid;
+				grid-gap: 1rem;
+				min-width: 0rem;
+				min-height: 0rem;
+				grid-template-columns: auto;
+				grid-template-rows: auto;
+				grid-template-areas:
+					"item1 item1 item1"
+					"item2 item2 item2"
+					"item3 item3 item3"
+					"item4 item4 item4"
+					"item5 item5 item5"
+					"item6 item6 item6"
+					"item7 item7 item7"
+					"item8 item8 item8"
+					"item9 item9 item9"
+					"item10 item10 item10"
+					"item11 item11 item11"
+					"item12 item12 item12";
+				}
 			}
 			
 						
@@ -203,47 +229,47 @@
 		
 			<section class="body-content-container">
 				<section class="body-content">
-					<div class="body-grid-container">
-						<div class="div-content-landing" style="grid-area: item1;">
+					<section class="body-grid-container">
+						<section class="div-content-landing" style="grid-area: item1;">
 							Landing Page
-							</div>
-						<div class="div-content" style="grid-area: item2;">
+							</section>
+						<section class="div-content" style="grid-area: item2;">
 							<h3>
 							What is a VPN?
 							</h3><br>
 							Tells users about VPNS: Why they're important, their different use-cases, and how they work.
-							</div>
-						<div class="div-content" style="grid-area: item3; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+							</section>
+						<section class="div-content" style="grid-area: item3; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
-							</div>
-						<div class="div-content" style="grid-area: item4; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+							</section>
+						<section class="div-content" style="grid-area: item4; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
-							</div>
-						<div class="div-content-library" style="grid-area: item5;">
+							</section>
+						<section class="div-content-library" style="grid-area: item5;">
 							Library
-							</div>
-						<div class="div-content" style="grid-area: item6; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+							</section>
+						<section class="div-content" style="grid-area: item6; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
-							</div>
-						<div class="div-content" style="grid-area: item7; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+							</section>
+						<section class="div-content" style="grid-area: item7; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
-							</div>
-						<div class="div-content" style="grid-area: item8; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+							</section>
+						<section class="div-content" style="grid-area: item8; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
-							</div>
-						<div class="div-content-reviews" style="grid-area: item9;">
+							</section>
+						<section class="div-content-reviews" style="grid-area: item9;">
 							Reviews
-							</div>
-						<div class="div-content" style="grid-area: item10">
+							</section>
+						<section class="div-content" style="grid-area: item10">
 							content
-							</div>
-						<div class="div-content" style="grid-area: item11">
+							</section>
+						<section class="div-content" style="grid-area: item11">
 							content
-							</div>
-						<div class="div-content" style="grid-area: item12">
+							</section>
+						<section class="div-content" style="grid-area: item12">
 							content
-							</div>
-					</div>
+							</section>
+					</section>
 				</section>
 			</section>
 		</section>
