@@ -3,16 +3,41 @@
 	<head>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Micro+5&display=swap" rel="stylesheet">
 		<title>Home | Pizza Jam</title>
+		
 		<style type="text/css">
 			
-			section {
-				box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
+			body {
+				background-color:#E3EDF2;
+				
+			}
+			
+			.body-grid-container {
+				display: grid;
+				grid-gap: 1rem;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+				grid-template-areas:
+					"item1 item2 item2"
+					"item3 item3 item4"
+					"item5 item5 item6"
+					"item7 item8 item8";
+			}
+			
+			.div-content {
+				font-family: Cardo, serif;
+				background: radial-gradient(#FFFFFF, #999999);
+				padding: 1rem;
+				border-radius: 1rem;
+			}
+			
+			hr {
+				color: aquamarine;
 			}
 			
 			section.body {
+				box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
 				display: block;
 				margin-left: 5vw;
 				margin-right: 5vw;
@@ -28,37 +53,41 @@
 				padding: 3rem;
 				font-display: block;
 				font-size: 1.25rem;
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-template-rows: auto auto;
-				grid-gap: 3rem;
+			}
+			
+			section.hero-image {
+				background-image: url("imgs/pexels-brett-sayles-2022650.jpg");
+				background-size: cover;
+				border-top-right-radius: 1rem;
+				border-top-left-radius: 1rem;
+				background-repeat: no-repeat;
+				background-position: bottom;
+				height: auto;
+				z-index: 1;
+			}
+			
+			section.hero-image-text {
+				font-family: "Micro 5", sans serif;
+				font-size: 20vw;
+				font-weight: 700;
+				padding: 3rem;
+				z-index: 2;
+				color: #F7FAFD;
+				text-shadow: #13181C .25rem 0rem 1rem;
 			}
 			
 			section.slider-banner-container {
 				text-shadow: #999999 0rem 0rem 0.5rem;
-				font-family: Josefin Sans, sans-serif;
-				font-size: 10vw;
-				font-weight: 700;
-				text-align: center;
+				font-family: Cardo, serif;
+				font-size: 1.5vw;
+				font-weight: 200;
+				text-align: left;
+				margin-left: 5vw;
+				margin-right: 5vw;
 				padding: 2rem 2rem 2rem 2rem;
 			}
 			
-			section.hero-image {
-				background-color:#1E4028;
-				background-size: contain;
-				background-position: center;
-				height: 100vh;
-			}
-			
-			body {
-				background-color:#E3EDF2;
-				
-			}
-			
 			ul,li {
-				border-radius: 1rem;
-				background-color: #F3F7F9;
-				padding: inherit;
 				font-family: Cardo, serif;
 				font-size: 1.5rem;
 				font-weight: 100;
@@ -93,30 +122,44 @@
 	</head>
 	<body>
 		<section class="slider-banner-container">
-		Project 2
+		<hr>Project 2 : Final Project Proposal | Christian Stacy | UMGC-CMST385 | Professor Allen <hr>
 		</section>
 		<section class="body">
 
-			<section class="hero-image"></section>
+			<section class="hero-image">
+				<section class="hero-image-text">
+				VPN Services
+				</section>
+			</section>
 		
 			<section class="body-content-container">
 				<section class="body-content">
-					<ul> 
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae vehicula odio. Duis iaculis convallis nisi a commodo. Nunc posuere massa aliquet, auctor leo quis, euismod turpis. Sed purus lectus, facilisis quis bibendum et, fermentum ut lacus. Morbi maximus sollicitudin faucibus. Sed viverra erat in ligula luctus mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-
-
-							Aenean tincidunt massa et eros porta, sodales imperdiet nunc pulvinar. Ut semper ex ac libero rutrum, nec pretium nulla tempor. Integer semper nunc diam, eget blandit mauris dapibus id. Aliquam vel lobortis sapien. Donec ac sodales ipsum. Sed a orci hendrerit, tincidunt dui id, porttitor quam. Sed auctor augue at velit vestibulum, nec gravida risus pretium. Donec euismod libero mi, non faucibus nisi lobortis non. Pellentesque ullamcorper sit amet dui eu luctus. Suspendisse aliquet maximus sapien, non dapibus sapien ultrices ac.
-						</p>
-					</ul>
-					<ul>
-					Well, howdy!
-					</ul>
-					<li>
-					testing
-					</li>
-				
-
+					<div class="body-grid-container">
+						<div class="div-content" style="grid-area: item1">
+							content
+							</div>
+						<div class="div-content" style="grid-area: item2">
+							content
+							</div>
+						<div class="div-content" style="grid-area: item3">
+							content
+							</div>
+						<div class="div-content" style="grid-area: item4">
+							content
+							</div>
+						<div class="div-content" style="grid-area: item5">
+							content
+							</div>
+						<div class="div-content" style="grid-area: item6">
+							content
+							</div>
+						<div class="div-content" style="grid-area: item7">
+							content
+							</div>
+						<div class="div-content" style="grid-area: item8">
+							content
+							</div>
+					</div>
 				</section>
 			</section>
 		</section>
