@@ -3,8 +3,9 @@
 	<head>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Micro+5&display=swap" rel="stylesheet">
-		<title>Home | Pizza Jam</title>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Micro+5&display=swap" rel="stylesheet">	
+		
+		<title>Project 2: Final Project Proposal</title>
 		
 		<style type="text/css">
 			
@@ -19,21 +20,63 @@
 				grid-template-columns: 1fr 1fr 1fr;
 				grid-template-rows: 1fr 1fr 1fr;
 				grid-template-areas:
-					"item1 item2 item2"
-					"item3 item3 item4"
-					"item5 item5 item6"
-					"item7 item8 item8";
+					"item1 item1 item1"
+					"item2 item3 item4"
+					"item2 item3 item4"
+					"item5 item5 item5"
+					"item6 item8 item8"
+					"item7 item8 item8"
+					"item9 item9 item9"
+					"item10 item11 item12";
 			}
 			
+						
 			.div-content {
-				font-family: Cardo, serif;
-				background: radial-gradient(#FFFFFF, #999999);
-				padding: 1rem;
+				font-family: "Josefin Sans", sans-serif;
+				background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));
+				font-weight: 100;
+				font-size: 1.5rem;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+			
+			.div-content-landing {
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 900;
+				color: #FFFFFF;
+				background-image: linear-gradient(rgba(235,235,255,0), rgba(0,140,255,1)), url("imgs/Computer Pattern@100x.png");
+				font-size: 3rem;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+			
+			.div-content-library {
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 900;
+				color: #FFFFFF;
+				background-image: linear-gradient(rgba(235,235,255,0), rgba(205,210,55,1)), url("imgs/Security bg@100x.png");
+				background-position: bottom;
+				background-size: cover;
+				font-size: 3rem;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+			
+			.div-content-reviews {
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 900;
+				color: #FFFFFF;
+				background-image: linear-gradient(rgba(235,235,255,0), rgba(90,200,205,1)), url("imgs/Like bg@100x.png");
+				background-position: top;
+				background-size: 40rem;
+				font-size: 3rem;
+				padding: 1.5rem;
 				border-radius: 1rem;
 			}
 			
 			hr {
-				color: aquamarine;
+				color: #999999;
+				border-style: dashed;
 			}
 			
 			section.body {
@@ -44,43 +87,52 @@
 				margin-top: -1vw;
 			}
 			
-			section.body-content-container {
-				height: auto;
-
-			}
-			
 			section.body-content {
 				padding: 3rem;
 				font-display: block;
 				font-size: 1.25rem;
 			}
 			
+			section.body-content-container {
+				height: auto;
+
+			}
+			
 			section.hero-image {
-				background-image: url("imgs/pexels-brett-sayles-2022650.jpg");
+				background-image: linear-gradient(rgba(125, 181, 136, .5), rgba(0, 0, 255, 0.5)), url("imgs/pexels-jakubzerdzicki-17668053.jpg");
 				background-size: cover;
 				border-top-right-radius: 1rem;
 				border-top-left-radius: 1rem;
 				background-repeat: no-repeat;
-				background-position: bottom;
+				background-position: center;
 				height: auto;
 				z-index: 1;
 			}
 			
 			section.hero-image-text {
 				font-family: "Micro 5", sans serif;
-				font-size: 20vw;
+				font-size: 15vw;
 				font-weight: 700;
 				padding: 3rem;
+				text-align: center;
 				z-index: 2;
 				color: #F7FAFD;
 				text-shadow: #13181C .25rem 0rem 1rem;
 			}
 			
+			section.hero-image-attribution {
+				font-family: Josefin Sans, sans-serif;
+				font-size: .5rem;
+				color: #FFFFFF;
+				text-align: right;
+				text-shadow: 0rem 0rem 0rem;
+			}
+			
 			section.slider-banner-container {
 				text-shadow: #999999 0rem 0rem 0.5rem;
-				font-family: Cardo, serif;
-				font-size: 1.5vw;
-				font-weight: 200;
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 100;
+				font-size: 1rem;
 				text-align: left;
 				margin-left: 5vw;
 				margin-right: 5vw;
@@ -88,7 +140,7 @@
 			}
 			
 			ul,li {
-				font-family: Cardo, serif;
+				font-family: Josefin Sans, sans-serif;
 				font-size: 1.5rem;
 				font-weight: 100;
 				box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
@@ -97,66 +149,98 @@
 			
 			h1 {
 				font-family: Josefin Sans, sans-serif;
-				font-size: 5rem;
+				font-size: 3rem;
 				font-weight: 700;
+				margin: 0rem;
 			}
 			
 			h2 {
 				font-family: Josefin Sans, sans-serif;
-				font-size: 4rem;
-				font-weight: 500;
+				font-size: 2rem;
+				font-weight: 650;
+				margin: 0rem;
 			}
 			
 			h3 {
 				font-family: Josefin Sans, sans-serif;
-				font-size: 3rem;
-				font-weight: 300;
+				font-size: 1.5rem;
+				font-weight: 600;
+				margin: 0rem;
 			}
 			
 			p {
-				font-family: Cardo, serif;
+				font-family: Josefin Sans, serif;
 				font-size: 1.5rem;
 				font-weight: 100;
+			}
+			
+			b {
+				font-family: Josefin Sans, serif;
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+			
+			u {
+				font-family: Josefin Sans, serif;
+				font-size: 1.5rem;
+				font-weight: 100;
+				text-decoration: underline;
 			}
 		</style>
 	</head>
 	<body>
 		<section class="slider-banner-container">
-		<hr>Project 2 : Final Project Proposal | Christian Stacy | UMGC-CMST385 | Professor Allen <hr>
+		Project 2 : Final Project Proposal | Christian Stacy | UMGC-CMST385 | Professor Allen
+			<hr>
 		</section>
 		<section class="body">
-
 			<section class="hero-image">
 				<section class="hero-image-text">
-				VPN Services
+				VPN Matchmaker
+					<section class="hero-image-attribution"> Photo by Jakub Zerdzicki: https://www.pexels.com/photo/smartphone-on-colorful-backround-blank-screen-mockup-copy-space-17668053/</section>
 				</section>
 			</section>
 		
 			<section class="body-content-container">
 				<section class="body-content">
 					<div class="body-grid-container">
-						<div class="div-content" style="grid-area: item1">
+						<div class="div-content-landing" style="grid-area: item1;">
+							Landing Page
+							</div>
+						<div class="div-content" style="grid-area: item2;">
+							<h3>
+							What is a VPN?
+							</h3><br>
+							Tells users about VPNS: Why they're important, their different use-cases, and how they work.
+							</div>
+						<div class="div-content" style="grid-area: item3; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
 							</div>
-						<div class="div-content" style="grid-area: item2">
+						<div class="div-content" style="grid-area: item4; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
 							</div>
-						<div class="div-content" style="grid-area: item3">
+						<div class="div-content-library" style="grid-area: item5;">
+							Library
+							</div>
+						<div class="div-content" style="grid-area: item6; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
 							</div>
-						<div class="div-content" style="grid-area: item4">
+						<div class="div-content" style="grid-area: item7; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
 							</div>
-						<div class="div-content" style="grid-area: item5">
+						<div class="div-content" style="grid-area: item8; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
 							content
 							</div>
-						<div class="div-content" style="grid-area: item6">
+						<div class="div-content-reviews" style="grid-area: item9;">
+							Reviews
+							</div>
+						<div class="div-content" style="grid-area: item10">
 							content
 							</div>
-						<div class="div-content" style="grid-area: item7">
+						<div class="div-content" style="grid-area: item11">
 							content
 							</div>
-						<div class="div-content" style="grid-area: item8">
+						<div class="div-content" style="grid-area: item12">
 							content
 							</div>
 					</div>
