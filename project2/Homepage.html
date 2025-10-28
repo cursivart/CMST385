@@ -10,7 +10,7 @@
 		<style type="text/css">
 			
 			body {
-				background-color:#E3EDF2;
+				background-color:#09137B;
 				
 			}
 			
@@ -29,33 +29,106 @@
 					"item6 item6 item6"
 					"item7 item8 item8"
 					"item9 item9 item9"
-					"item10 item11 item12";
+					"item10 item11 item11";
 			}
 			
 			@media(max-width : 600px ){
-				.body-grid-container{
-				display: grid;
-				grid-gap: 1rem;
-				min-width: 0rem;
-				min-height: 0rem;
-				grid-template-columns: auto;
-				grid-template-rows: auto;
-				grid-template-areas:
-					"item1 item1 item1"
-					"item2 item2 item2"
-					"item3 item3 item3"
-					"item4 item4 item4"
-					"item5 item5 item5"
-					"item6 item6 item6"
-					"item7 item7 item7"
-					"item8 item8 item8"
-					"item9 item9 item9"
-					"item10 item10 item10"
-					"item11 item11 item11";
+					.body-grid-container{
+					display: grid;
+					grid-gap: 1rem;
+					min-width: 0rem;
+					min-height: 0rem;
+					grid-template-columns: auto;
+					grid-template-rows: auto;
+					grid-template-areas:
+						"item1 item1 item1"
+						"item2 item2 item2"
+						"item3 item3 item3"
+						"item4 item4 item4"
+						"item5 item5 item5"
+						"item6 item6 item6"
+						"item7 item7 item7"
+						"item8 item8 item8"
+						"item9 item9 item9"
+						"item10 item10 item10"
+						"item11 item11 item11";
+					}
+
+					.logo-container{
+					position: fixed;
+					left: 0px;
+					top: 0px;
+					max-width: 80px;
+					max-height: 80px;
+					background-image: url("imgs/VPN-Matchmaker-01.png");
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+					}
+
+					section.hero-image-attribution {
+					font-family: Josefin Sans, sans-serif;
+					font-size: 1.5rem;
+					color: #FFFFFF;
+					text-align: right;
+					text-shadow: 0rem 0rem 0rem;
+				}
+			
+				ul,li {
+					font-family: Josefin Sans, sans-serif;
+					font-size: 2rem;
+					font-weight: 100;
+
+				}
+
+				h1 {
+					font-family: Josefin Sans, sans-serif;
+					font-size: 4rem;
+					font-weight: 700;
+					margin: 0rem;
+				}
+
+				h2 {
+					font-family: Josefin Sans, sans-serif;
+					font-size: 3rem;
+					font-weight: 650;
+					margin: 0rem;
+				}
+
+				h3 {
+					font-family: Josefin Sans, sans-serif;
+					font-size: 2rem;
+					font-weight: 600;
+					margin: 0rem;
+				}
+
+				p {
+					font-family: Josefin Sans, serif;
+					font-size: 2rem;
+					font-weight: 100;
+				}
+
+				b {
+					font-family: Josefin Sans, serif;
+					font-size: 2rem;
+					font-weight: 700;
+				}
+
+				u {
+					font-family: Josefin Sans, serif;
+					font-size: 2rem;
+					font-weight: 100;
+					text-decoration: underline;
+				}
+
+					section.body-content {
+					padding: 3rem;
+					font-display: block;
+					font-size: 2rem;
+					background-color: #E3EDF2;
 				}
 			}
 			
-						
 			.div-content {
 				font-family: "Josefin Sans", sans-serif;
 				background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));
@@ -104,6 +177,31 @@
 				border-style: dashed;
 			}
 			
+			.logo-container {
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				width: 100px;
+				height: 100px;
+				background-image: url("imgs/VPN-Matchmaker-01.png");
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			
+			section.assignment-description {
+				text-shadow: #999999 0rem 0rem 0.5rem;
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 100;
+				font-size: 1rem;
+				color: #E1ECF4;
+				text-align: left;
+				margin-left: 5vw;
+				margin-right: 5vw;
+				padding: 2rem 2rem 2rem 2rem;
+			}
+			
 			section.body {
 				box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
 				display: block;
@@ -116,6 +214,7 @@
 				padding: 3rem;
 				font-display: block;
 				font-size: 1.25rem;
+				background-color: #E3EDF2;
 			}
 			
 			section.body-content-container {
@@ -151,17 +250,6 @@
 				color: #FFFFFF;
 				text-align: right;
 				text-shadow: 0rem 0rem 0rem;
-			}
-			
-			section.slider-banner-container {
-				text-shadow: #999999 0rem 0rem 0.5rem;
-				font-family: "Josefin Sans", sans-serif;
-				font-weight: 100;
-				font-size: 1rem;
-				text-align: left;
-				margin-left: 5vw;
-				margin-right: 5vw;
-				padding: 2rem 2rem 2rem 2rem;
 			}
 			
 			ul,li {
@@ -213,7 +301,8 @@
 		</style>
 	</head>
 	<body>
-		<section class="slider-banner-container">
+		<div class="logo-container"></div>
+		<section class="assignment-description">
 		Project 2 : Final Project Proposal | Christian Stacy | UMGC-CMST385 | Professor Allen
 			<hr>
 		</section>
@@ -267,10 +356,10 @@
 						<section class="div-content" style="grid-area: item11">
 							content
 							</section>
-						<section class="div-content" style="grid-area: item12">
-							content
-							</section>
 					</section>
+					
+					<p>Proposed logo @ top-left is handmade in Adobe Illustrator. I may choose to animate it so it can have a hover animation, but for now, I'm happy with it. I am planning on having the navigation bar slide out from the left margin when the logo is clicked. This will include the aforementioned Landing Page, Library and Reviews pages, as well as a Legal page, which will just include some brief background about the legality of VPN's, maybe a map of where they are legal and how to use them ethically.</p>
+					
 				</section>
 			</section>
 		</section>
