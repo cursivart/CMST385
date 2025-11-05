@@ -3,15 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Introduction</title>
+	<script>$("#bodywrapper").delay(1000).animate({"opacity": "1"}, 700);</script>
 	<style type="text/css">
-		body {
-			background-color: blue;
-			opacity:1;
-			transition: opacity 1s ease-in;
+		#bodywrapper {
+			opacity: 0;
+			font-size: 1.5rem;
+			display:block;
+			place-items: center;
+			height: 100vh;
 		}
 	</style>
 </head>
 
 <body>
+	<div id="bodywrapper">
+		<img src="imgs/Corgitestphoto.webp" alt="corgi test photo">
+		<br>
+		testing!
+	</div>
 </body>
 </html>
