@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Introduction</title>
-	<script>$("#bodywrapper").delay(1000).animate({"opacity": "1"}, 700);</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function() {
+			$("#bodywrapper").delay(1000).animate({opacity: 1}, 700);
+		});
+</script>
 	<style type="text/css">
 		#bodywrapper {
 			opacity: 0;
