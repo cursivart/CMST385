@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Introduction</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumar+One&display=swap" rel="stylesheet">
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(function() {
@@ -10,21 +14,396 @@
 		});
 </script>
 	<style type="text/css">
-		#bodywrapper {
-			opacity: 0;
-			font-size: 1.5rem;
-			display:block;
-			place-items: center;
-			height: 100vh;
-		}
+		
+			#bodywrapper {
+				opacity: 0;
+				font-size: 1.5rem;
+				display:block;
+				place-items: center;
+				height: 100vh;
+			}
+		
+			.body-grid-container {
+				display: grid;
+				grid-gap: 1rem;
+				min-width: 0rem;
+				min-height: 0rem;
+				grid-template-columns: auto;
+				grid-template-rows: auto;
+				grid-template-areas:
+					"item1 item1 item1"
+					"item2 item3 item3"
+					"item4 item4 item4"
+					"item5 item5 item5"
+					"item6 item6 item6"
+					"item7 item8 item8"
+					"item9 item9 item9"
+					"item10 item11 item11"
+					"item12 item12 item12"
+					"item13 item13 item14";
+			}
+			
+			@media(max-width : 600px ){
+					.body-grid-container{
+					display: grid;
+					grid-gap: 1rem;
+					min-width: 0rem;
+					min-height: 0rem;
+					grid-template-columns: auto;
+					grid-template-rows: auto;
+					grid-template-areas:
+						"item1 item1 item1"
+						"item2 item2 item2"
+						"item3 item3 item3"
+						"item4 item4 item4"
+						"item5 item5 item5"
+						"item6 item6 item6"
+						"item7 item7 item7"
+						"item8 item8 item8"
+						"item9 item9 item9"
+						"item10 item10 item10"
+						"item11 item11 item11"
+						"item12 item12 item12"
+						"item13 item13 item14";
+					}
+				
+			.logo-container{
+				position: fixed;
+				left: .25rem;
+				top: 1rem;
+				max-width: 80px;
+				max-height: 80px;
+				background-image: url("image");
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+					}
+
+			section.hero-image-attribution {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 1.5rem;
+				color: #FFFFFF;
+				text-align: right;
+				text-shadow: 0rem 0rem 0rem;
+				}
+			
+			ul,li {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 2rem;
+				font-weight: 100;
+
+				}
+
+			h1 {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 4rem;
+				font-weight: 700;
+				margin: 0rem;
+				}
+
+			h2 {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 3rem;
+				font-weight: 650;
+				margin: 0rem;
+				}
+
+			h3 {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 2rem;
+				font-weight: 600;
+				margin: 0rem;
+				}
+
+			p {
+				font-family: Josefin Sans, serif;
+				font-size: 2rem;
+				font-weight: 100;
+				}
+
+			b {
+				font-family: Josefin Sans, serif;
+				font-size: 2rem;
+				font-weight: 700;
+				}
+
+			u {
+				font-family: Josefin Sans, serif;
+				font-size: 2rem;
+				font-weight: 100;
+				text-decoration: underline;
+				}
+
+			section.body-content {
+				padding: 3rem;
+				font-display: block;
+				font-size: 2rem;
+				background-color: #E3EDF2;
+				}
+			}
+			
+			.div-content {
+				font-family: "Josefin Sans", sans-serif;
+				background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));
+				font-weight: 100;
+				font-size: 1.5rem;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+			
+			.div-content-blue {
+				font-family: "Kumar One", sans-serif;
+				font-weight: 900;
+				color: #FFFFFF;
+				background-image: linear-gradient(rgba(0,140,255,0), rgba(0,140,255,1)), url("image");
+				font-size: 3rem;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+			
+			.div-content-yellow {
+				font-family: "Kumar One", sans-serif;
+				font-weight: 900;
+				color: #FFFFFF;
+				background-image: linear-gradient(rgba(235,235,255,0), rgba(205,210,55,1)), url("image");
+				background-position: bottom;
+				background-size: cover;
+				font-size: 3rem;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+			
+			.div-content-aqua {
+				font-family: "Kumar One", sans-serif;
+				font-weight: 900;
+				color: #FFFFFF;
+				background-image: linear-gradient(rgba(235,235,255,0), rgba(90,200,205,1)), url("image");
+				background-position: top;
+				background-size: 40rem;
+				font-size: 3rem;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+		
+			.div-content-fuchsia {
+				font-family: "Kumar One", sans-serif;
+				font-weight: 900;
+				color: #FFFFFF;
+				background-image: linear-gradient(rgba(235,235,255,0), rgba(255,0,255,1)), url("image");
+				background-position: top;
+				background-size: 40rem;
+				font-size: 3rem;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+		
+			
+			hr {
+				color: #999999;
+				border-style: dashed;
+			}
+			
+			.logo-container {
+				position: fixed;
+				left: .25rem;
+				top: 1rem;
+				width: 100px;
+				height: 100px;
+				background-image: url("image");
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+			
+			section.assignment-description {
+				text-shadow: #999999 0rem 0rem 0.5rem;
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 100;
+				font-size: 1rem;
+				color: #333333;
+				text-align: right;
+				margin-left: 5vw;
+				margin-right: 5vw;
+				padding: 2rem 2rem 2rem 2rem;
+			}
+			
+			section.body {
+				box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
+				display: block;
+				margin-left: 5vw;
+				margin-right: 5vw;
+				margin-top: -1vw;
+			}
+			
+			section.body-content {
+				padding: 3rem;
+				font-display: block;
+				font-size: 1.25rem;
+				background-color: #E3EDF2;
+			}
+			
+			section.body-content-container {
+				height: auto;
+
+			}
+			
+			section.hero-image {
+				background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(227, 237, 242, 1)), url("image");
+				background-size: cover;
+				border-top-right-radius: 1rem;
+				border-top-left-radius: 1rem;
+				background-repeat: no-repeat;
+				background-position: center;
+				height: auto;
+				z-index: 1;
+			}
+			
+			section.hero-image-text {
+				font-family: "Kumar One", sans serif;
+				letter-spacing: 0rem;
+				font-size: 10vw;
+				font-weight: 700;
+				padding: 3rem;
+				text-align: center;
+				z-index: 2;
+				color: #210529;
+				text-shadow: rgba(19, 24, 28, .5) 0rem 1rem 1rem;
+			}
+			
+			section.hero-image-attribution {
+				font-family: Josefin Sans, sans-serif;
+				font-size: .5rem;
+				color: #FFFFFF;
+				text-align: right;
+				text-shadow: 0rem 0rem 0rem;
+			}
+			
+			ul,li {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 1.5rem;
+				font-weight: 100;
+				
+			}
+			
+			h1 {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 3rem;
+				font-weight: 700;
+				margin: 0rem;
+			}
+			
+			h2 {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 2rem;
+				font-weight: 650;
+				margin: 0rem;
+			}
+			
+			h3 {
+				font-family: Josefin Sans, sans-serif;
+				font-size: 1.5rem;
+				font-weight: 600;
+				margin: 0rem;
+			}
+			
+			p {
+				font-family: Josefin Sans, serif;
+				font-size: 1.5rem;
+				font-weight: 100;
+			}
+			
+			b {
+				font-family: Josefin Sans, serif;
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+			
+			u {
+				font-family: Josefin Sans, serif;
+				font-size: 1.5rem;
+				font-weight: 100;
+				text-decoration: underline;
+			}
+		
 	</style>
 </head>
 
 <body>
 	<div id="bodywrapper">
-		<img src="imgs/Corgitestphoto.webp" alt="corgi test photo">
-		<br>
-		testing!
-	</div>
-</body>
+		<div class="logo-container"></div>
+			<section class="assignment-description">
+			Project 2 : Final Project Proposal | Christian Stacy | UMGC-CMST385 | Professor Allen
+				<hr>
+			</section>
+			<section class="body">
+				<section class="hero-image">
+					<section class="hero-image-text">
+					Portfolio
+					</section>
+				</section>
+		
+				<section class="body-content-container">
+					<section class="body-content">
+						<section class="body-grid-container">
+							<section class="div-content-blue" style="grid-area: item1;">
+								Landing Page
+								</section>
+							<section class="div-content" style="grid-area: item2;">
+								<h3>
+								What is a VPN?
+								</h3><br>
+								Tells users about VPN'S: Why they're important, their different use-cases, and how they work.
+								</section>
+							<section class="div-content" style="grid-area: item3; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+								<h3>
+								Statistics
+								</h3><br>
+								Include maybe a graph or something about cyberattacks blocked via VPN.
+								<li> Maybe some facts in a list?</li>
+								<li> Bulletpoints catch the eye!</li>
+							
+								</section>
+							<section class="div-content-yellow" style="grid-area: item5;">
+							Library
+								</section>
+							<section class="div-content" style="grid-area: item6; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+								<h3>Swipe Right</h3><br>
+								The Library focus on a section where a visitor can compare and contrast different VPN services based on their needs. They can compare things like price, ease-of-use, and more. Below are a few notes and an early interface that aims to allow users to "swipe right(add to compare/contrast) or left(push to back of deck)" the different VPN services the website features.
+								</section>
+							<section class="div-content" style="grid-area: item7; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+								<li> Each VPN's card will include simple, star-based evaluations of each of the metrics connected to their services.</li>
+								<li> Once the user has gone through the entire stack and chosen a few key cards, they can then compare the cards in a compare/contrast <b>Spotlight</b> station further down the page.</li>
+								</section>
+							<section class="div-content" style="grid-area: item8; background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));">
+								Static image of proposed function. Use <a href="https://www.youtube.com/watch?v=4gVFOueTq6k">this</a> video to 	figure it out.
+								</section>
+							<section class="div-content-aqua" style="grid-area: item9;">
+								Reviews
+								</section>
+							<section class="div-content" style="grid-area: item10">
+								Reviews will of course be made available on this page. This will include star-based, filter-driven interface.
+								</section>
+							<section class="div-content" style="grid-area: item11">
+								</section>
+							<section class="div-content-fuchsia" style="grid-area: item12;">
+								Reviews
+								</section>
+							<section class="div-content" style="grid-area: item13">
+								Reviews will of course be made available on this page. This will include star-based, filter-driven interface.
+								</section>
+							<section class="div-content" style="grid-area: item14">
+							
+								</section>
+						</section>
+					
+						<p>
+						Proposed logo @ top-left is handmade in Adobe Illustrator. I may choose to animate it so it can have a hover animation, but for now, I'm happy with it. I am planning on having the navigation bar slide out from the top margin when the logo is clicked. The target look should be reminiscent of a manilla file folder. This navigation will include the aforementioned Landing Page, Library and Reviews pages, as well as a Legal page, which will just include some brief background about the legality of VPN's, maybe a map of where they are legal and how to use them ethically.
+						</p>
+					
+					</section>
+				</section>
+			</section>
+		</div>
+	</body>
 </html>
