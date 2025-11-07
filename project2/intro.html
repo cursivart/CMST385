@@ -67,7 +67,20 @@
 						"item13 item13 item14";
 					}
 				
-				.logo-container{
+				.color-palette {
+					display: grid;
+					grid-gap: 1rem;
+					min-width: 0rem;
+					min-height: 0rem;
+					grid-template-columns: 3;
+					grid-template-rows: 1;
+					grid-template-areas:
+						"color1 color1 color1"
+						"color2 color2 color2"
+						"color3 color3 color3";
+				}
+				
+				.logo-container {
 					position: fixed;
 					left: .25rem;
 					top: 1rem;
@@ -141,7 +154,46 @@
 					background-color: #E3EDF2;
 					}
 				}
+		
+				.color-palette {
+					display: grid;
+					grid-gap: 1rem;
+					min-width: 0rem;
+					min-height: 0rem;
+					grid-template-columns: 3;
+					grid-template-rows: 1;
+					grid-template-areas:
+						"color1 color2 color3";
+				}
 			
+			.color-palette-content {
+				font-family: "Josefin Sans", sans-serif;
+				color: #FFFFFF;
+				font-weight: 100;
+				font-size: 1.5rem;
+			}
+		
+			.color1 {
+				background-color: red;
+				padding: 1.5rem;
+				border-radius: 1rem;
+				
+			}
+		
+		
+			.color2 {
+				background-color: red;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+		
+		
+			.color3 {
+				background-color: #210529;
+				padding: 1.5rem;
+				border-radius: 1rem;
+			}
+		
 			.div-content {
 				font-family: "Josefin Sans", sans-serif;
 				background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));
@@ -223,16 +275,16 @@
 				font-size: 1rem;
 				color: #333333;
 				text-align: right;
-				margin-left: 5vw;
-				margin-right: 5vw;
+				margin-left: 3vw;
+				margin-right: 3vw;
 				padding: 2rem 2rem 2rem 2rem;
 			}
 			
 			section.body {
 				box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
 				display: block;
-				margin-left: 5vw;
-				margin-right: 5vw;
+				margin-left: 3vw;
+				margin-right: 3vw;
 				margin-top: -1vw;
 			}
 			
@@ -274,7 +326,7 @@
 				text-align: center;
 				z-index: 2;
 				color: #210529;
-				text-shadow: rgba(19, 24, 28, .5) 0rem 1rem 1rem;
+				text-shadow: rgba(33, 5, 41, .5) 0rem 1rem 1rem;
 			}
 			
 			section.hero-image-attribution {
@@ -350,8 +402,19 @@
 		
 				<section class="body-content-container">
 					<section class="body-content">
-						<li>Hi</li>
-						<img src="imgs/Portfolio-Website-diagram.png" alt="diagram of website proposal">
+						<h2>Color Palette</h2>
+						<section class="color-palette-content">
+						<section class="color1" style="grid-area: color1;">
+							hello
+							</section>
+						<section class="color2" style="grid-area: color2;">
+							hello
+							</section>
+						<section class="color3" style="grid-area: color3;">
+							hello
+							</section>
+							</section>
+						<section class="div-content" style="grid-area: item1;"><img src="imgs/Portfolio-Website-diagram.png" alt="diagram of website proposal"></section>
 					</section>
 				</section>
 			</section>
