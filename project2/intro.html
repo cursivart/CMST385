@@ -43,7 +43,7 @@
 					"item13 item13 item14";
 			}
 			
-			@media(max-width : 600px ){
+			@media( max-width : 600px ){
 					.body-grid-container{
 					display: grid;
 					grid-gap: 1rem;
@@ -69,6 +69,8 @@
 				
 				.color-palette {
 					display: grid;
+					font-family: "Josefin Sans", sans-serif;
+					color: #FFFFFF;
 					grid-gap: 1rem;
 					min-width: 0rem;
 					min-height: 0rem;
@@ -160,18 +162,15 @@
 					grid-gap: 1rem;
 					min-width: 0rem;
 					min-height: 0rem;
+					font-family: "Josefin Sans", sans-serif;
+					color: #FFFFFF;
+					font-weight: 100;
+					font-size: 1.5rem;
 					grid-template-columns: 3;
 					grid-template-rows: 1;
 					grid-template-areas:
 						"color1 color2 color3";
 				}
-			
-			.color-palette-content {
-				font-family: "Josefin Sans", sans-serif;
-				color: #FFFFFF;
-				font-weight: 100;
-				font-size: 1.5rem;
-			}
 		
 			.color1 {
 				background-color: red;
@@ -402,18 +401,13 @@
 		
 				<section class="body-content-container">
 					<section class="body-content">
-						<h2>Color Palette</h2>
-						<section class="color-palette-content">
-						<section class="color1" style="grid-area: color1;">
-							hello
-							</section>
-						<section class="color2" style="grid-area: color2;">
-							hello
-							</section>
-						<section class="color3" style="grid-area: color3;">
-							hello
-							</section>
-							</section>
+						<h2>Color Palette</h2><br>
+						<section class="color-palette">
+						  <section class="color1">hello</section>
+						  <section class="color2">hello</section>
+						  <section class="color3">hello</section>
+						</section>
+						<br>
 						<section class="div-content" style="grid-area: item1;"><img src="imgs/Portfolio-Website-diagram.png" alt="diagram of website proposal"></section>
 					</section>
 				</section>
