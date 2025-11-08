@@ -18,7 +18,7 @@
 			#bodywrapper {
 				opacity: 0;
 				font-size: 1.5rem;
-				display:block;
+				display: block;
 				place-items: center;
 				height: 100vh;
 			}
@@ -32,12 +32,12 @@
 				grid-template-rows: auto;
 				grid-template-areas:
 					"item1 item1 item1"
-					"item2 item3 item3"
-					"item4 item4 item4"
+					"item2 item2 item2"
+					"item3 item4 item4"
 					"item5 item5 item5"
 					"item6 item6 item6"
-					"item7 item8 item8"
-					"item9 item9 item9"
+					"item7 item7 item7"
+					"item8 item9 item9"
 					"item10 item11 item11"
 					"item12 item12 item12"
 					"item13 item13 item14";
@@ -71,15 +71,17 @@
 					display: grid;
 					font-family: "Josefin Sans", sans-serif;
 					color: #FFFFFF;
+					text-align: center;
 					grid-gap: 1rem;
 					min-width: 0rem;
 					min-height: 0rem;
-					grid-template-columns: 3;
-					grid-template-rows: 1;
+					grid-template-columns: auto;
+					grid-template-rows: auto;
 					grid-template-areas:
 						"color1 color1 color1"
 						"color2 color2 color2"
-						"color3 color3 color3";
+						"color3 color3 color3"
+						"color4 color4 color4";
 				}
 				
 				.logo-container {
@@ -159,6 +161,7 @@
 		
 				.color-palette {
 					display: grid;
+					text-align: center;
 					grid-gap: 1rem;
 					min-width: 0rem;
 					min-height: 0rem;
@@ -166,24 +169,34 @@
 					color: #FFFFFF;
 					font-weight: 100;
 					font-size: 1.5rem;
-					grid-template-columns: 3;
-					grid-template-rows: 1;
+					grid-template-columns: auto;
+					grid-template-rows: auto;
 					grid-template-areas:
-						"color1 color2 color3";
+						"color1 color2 color3"
+						"color4 color4 color4";
 				}
 		
 			.color1 {
-				background-color: red;
+				background-color: #002e54;
 				padding: 1.5rem;
 				border-radius: 1rem;
-				
+				grid-area: "color1";
+				color:#FFFFFF;
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 100;
+				font-size: 1.5rem;
 			}
 		
 		
 			.color2 {
-				background-color: red;
+				background-color: #E281F6;
 				padding: 1.5rem;
 				border-radius: 1rem;
+				grid-area: "color2";
+				color:#FFFFFF;
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 100;
+				font-size: 1.5rem;
 			}
 		
 		
@@ -191,11 +204,27 @@
 				background-color: #210529;
 				padding: 1.5rem;
 				border-radius: 1rem;
+				grid-area: "color3";
+				color:#FFFFFF;
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 100;
+				font-size: 1.5rem;
+		}
+		
+			.color4 {
+				background-color: #210529;
+				padding: 1.5rem;
+				border-radius: 1rem;
+				grid-area: "color4";
+				color:#FFFFFF;
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 100;
+				font-size: 1.5rem;
 			}
 		
 			.div-content {
 				font-family: "Josefin Sans", sans-serif;
-				background: radial-gradient(rgba(235,235,255,1), rgba(200,200,200,1));
+				background-color: #210529;
 				font-weight: 100;
 				font-size: 1.5rem;
 				padding: 1.5rem;
@@ -292,10 +321,13 @@
 				font-display: block;
 				font-size: 1.25rem;
 				background-color: #E3EDF2;
+				width: 80vw;
+				margin: auto;
+				display: block;
 			}
 		
 			section.body-content img {
-				width: 50vw;
+				width: 60vw;
 				margin: auto;
 				display: block;
 			}
@@ -334,6 +366,12 @@
 				color: #FFFFFF;
 				text-align: right;
 				text-shadow: 0rem 0rem 0rem;
+			}
+		
+			mark {
+				background-color: #E281F6;
+				color: #FFFFFF;
+				font-weight: 500;
 			}
 		
 			ul,li,ol {
@@ -387,31 +425,70 @@
 </head>
 
 <body>
-	<div id="bodywrapper">
+<div id="bodywrapper">
 		<div class="logo-container"></div>
 			<section class="assignment-description">
 			Project 2 : Final Project Proposal | Christian Stacy | UMGC-CMST385 | Professor Allen
-			</section>
-			<section class="body">
-				<section class="hero-image">
-					<section class="hero-image-text">
-					Portfolio
-					</section>
+		</section>
+		<section class="body">
+			<section class="hero-image">
+				<section class="hero-image-text">
+				  Portfolio
 				</section>
+		    </section>
 		
-				<section class="body-content-container">
-					<section class="body-content">
-						<h2>Color Palette</h2><br>
-						<section class="color-palette">
-						  <section class="color1">hello</section>
-						  <section class="color2">hello</section>
-						  <section class="color3">hello</section>
-						</section>
-						<br>
-						<section class="div-content" style="grid-area: item1;"><img src="imgs/Portfolio-Website-diagram.png" alt="diagram of website proposal"></section>
+			<section class="body-content-container">
+				<section class="body-content">
+					<h1>Design</h1><br>
+					<h2>Color Palette</h2><br>
+					<section class="color-palette">
+						<section class="color1"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
+						<section class="color2"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
+						<section class="color3"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
+				    </section>
+					<br>
+					<h2><li style="color:aqua">test</li>Typeface Rules</h2><br>
+					<section class="color4">
+						<mark>ul, li, ol:</mark><strong>Josefin Sans</strong>, sans-serif | size: 1.5rem | weight: 100
+						<br><br>
+						<mark>mark:</mark> <strong>Josefin Sans</strong>, sans-serif | size: 1.5rem | weight:500
+						<br><br>
+						<mark>b:</mark>
+						<br><br>
+						<mark>h1:</mark>
+						<br><br>
+						<mark>h2:</mark>
+						<br><br>
+						<mark>h3:</mark>
+						<br><br>
+						<mark>i:</mark>
+						<br><br>
+						<mark>p:</mark>
+						<br><br>
+						<mark>u:</mark>
 					</section>
-				</section>
-			</section>
+					<br>
+					<h2>Site Planning</h2><br>
+					<section class="body-grid-container">
+					<section class="div-content" style="grid-area: item1; width: 30vw;">
+						<b style="color:#FFFFFF">Landing Page</b>
+						</section>
+					<section class="div-content" style="grid-area:item2; background-color: #E281F6;">
+						</section>
+					<section class="div-content" style="grid-area:item4; width: 30vw">
+						<b style="color:#FFFFFF">About Me</b>
+						</section>
+					<section class="div-content" style="grid-area:item5; background-color: #E281F6;">
+						</section>
+					<section class="div-content" style="grid-area:item6; width: 30vw">
+						<b style="color:#FFFFFF">Portfolio Cards</b>
+						</section>
+					<section class="div-content" style="grid-area:item7; background-color: #E281F6;">
+						</section>
+					</section>
+			    </section>
+		    </section>
+	  	  </section>
 		</div>
 	</body>
 </html>
