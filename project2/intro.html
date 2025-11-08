@@ -37,10 +37,10 @@
 					"item5 item5 item5"
 					"item6 item6 item6"
 					"item7 item7 item7"
-					"item8 item9 item9"
-					"item10 item11 item11"
-					"item12 item12 item12"
-					"item13 item13 item14";
+					"item9 item9 item8"
+					"item10 item10 item10"
+					"item12 item13 item13"
+					"item14 item14 item14";
 			}
 			
 			@media( max-width : 600px ){
@@ -81,7 +81,8 @@
 						"color1 color1 color1"
 						"color2 color2 color2"
 						"color3 color3 color3"
-						"color4 color4 color4";
+						"color4 color4 color4"
+						"color5 color5 color5";
 				}
 				
 				.logo-container {
@@ -103,13 +104,14 @@
 					text-align: right;
 					text-shadow: 0rem 0rem 0rem;
 					}
-
-				ul,li,ol {
+				
+				li {
 					font-family: "Josefin Sans", sans-serif;
 					font-size: 1.5rem;
 					font-weight: 100;
-					list-style-image: url("https://cmst385-umgc-cstacy3.azurewebsites.net/project2/imgs/list-bullet.svg");
-					}
+					padding: .5rem;
+					list-style-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 288 288'><rect class='st0' x='42.7' y='42.7' fill='%23210529' width='202.6' height='202.6' transform='translate(-59.6 144) rotate(-45)'/></svg>");
+				}
 
 				h1 {
 					font-family: "Josefin Sans", sans-serif;
@@ -150,6 +152,13 @@
 					font-weight: 100;
 					text-decoration: underline;
 				}
+				
+				i {
+					font-family: "Josefin Sans", sans-serif;
+					font-size: 1.5rem;
+					font-weight: 100;
+					font-style: italic;
+				}
 
 				section.body-content {
 					padding: 3rem;
@@ -173,7 +182,7 @@
 					grid-template-rows: auto;
 					grid-template-areas:
 						"color1 color2 color3"
-						"color4 color4 color4";
+						"color4 color4 color5";
 				}
 		
 			.color1 {
@@ -216,6 +225,17 @@
 				padding: 1.5rem;
 				border-radius: 1rem;
 				grid-area: "color4";
+				color:#FFFFFF;
+				font-family: "Josefin Sans", sans-serif;
+				font-weight: 100;
+				font-size: 1.5rem;
+			}
+		
+			.color5 {
+				background-color: #210529;
+				padding: 1.5rem;
+				border-radius: 1rem;
+				grid-area: "color5";
 				color:#FFFFFF;
 				font-family: "Josefin Sans", sans-serif;
 				font-weight: 100;
@@ -297,15 +317,16 @@
 			
 			
 			section.assignment-description {
-				text-shadow: #999999 0rem 0rem 0.5rem;
+				text-shadow: #210529 0rem 0rem 1rem;
 				font-family: "Josefin Sans", sans-serif;
-				font-weight: 100;
+				font-weight: 500;
 				font-size: 1rem;
-				color: #333333;
-				text-align: right;
+				color: #FFFFFF;
+				text-align: center;
 				margin-left: 3vw;
 				margin-right: 3vw;
-				padding: 2rem 2rem 2rem 2rem;
+				padding: 2rem 0rem 0rem 0rem;
+				z-index:2;
 			}
 			
 			section.body {
@@ -338,8 +359,8 @@
 			}
 			
 			section.hero-image {
-				background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(227, 237, 242, 1)), url("image");
-				background-size: cover;
+				background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(227, 237, 242, 1)), url("imgs/bouquet-outline@100x.png");
+				background-size: 100%;
 				border-top-right-radius: 1rem;
 				border-top-left-radius: 1rem;
 				background-repeat: no-repeat;
@@ -374,12 +395,13 @@
 				font-weight: 500;
 			}
 		
-			ul,li,ol {
+			li {
 				font-family: "Josefin Sans", sans-serif;
 				font-size: 1.5rem;
 				font-weight: 100;
-				list-style-image: url("https://cmst385-umgc-cstacy3.azurewebsites.net/project2/imgs/list-bullet.svg");
-				}
+				padding: .5rem;
+				list-style-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 288 288'><rect class='st0' x='42.7' y='42.7' fill='%23210529' width='202.6' height='202.6' transform='translate(-59.6 144) rotate(-45)'/></svg>");
+			}
 			
 			h1 {
 				font-family: "Josefin Sans", sans-serif;
@@ -427,11 +449,12 @@
 <body>
 <div id="bodywrapper">
 		<div class="logo-container"></div>
-			<section class="assignment-description">
-			Project 2 : Final Project Proposal | Christian Stacy | UMGC-CMST385 | Professor Allen
-		</section>
+		<br>
 		<section class="body">
 			<section class="hero-image">
+				<section class="assignment-description">
+						Project 2 : Final Project Proposal | Christian Stacy | UMGC-CMST385 | Professor Allen
+					</section>
 				<section class="hero-image-text">
 				  Portfolio
 				</section>
@@ -441,49 +464,107 @@
 				<section class="body-content">
 					<h1>Design</h1><br>
 					<h2>Color Palette</h2><br>
-					<section class="color-palette">
+				<section class="color-palette">
 						<section class="color1"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
 						<section class="color2"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
 						<section class="color3"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
 				    </section>
-					<br>
-					<h2><li style="color:aqua">test</li>Typeface Rules</h2><br>
-					<section class="color4">
-						<mark>ul, li, ol:</mark><strong>Josefin Sans</strong>, sans-serif | size: 1.5rem | weight: 100
-						<br><br>
-						<mark>mark:</mark> <strong>Josefin Sans</strong>, sans-serif | size: 1.5rem | weight:500
-						<br><br>
-						<mark>b:</mark>
-						<br><br>
-						<mark>h1:</mark>
-						<br><br>
-						<mark>h2:</mark>
-						<br><br>
-						<mark>h3:</mark>
-						<br><br>
-						<mark>i:</mark>
-						<br><br>
-						<mark>p:</mark>
-						<br><br>
-						<mark>u:</mark>
-					</section>
-					<br>
-					<h2>Site Planning</h2><br>
+						<br>
+						<h2>Typeface Rules</h2>
+					<section class="color-palette">
+						<section class="color4" style="grid-area: color4;">
+							<h3>Desktop</h3><br>
+							<mark>ul, li, ol:</mark> Josefin Sans, sans-serif | size: 1.5 | weight: 100
+							<br><br>
+							<mark>mark:</mark> Josefin Sans, sans-serif | size: 1.5 | weight 500
+							<br><br>
+							<mark>.hero:</mark> Kumar One, sans-serif | size: 10vw | weight: 700
+							<br><br>
+							<mark>b:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:500
+							<br><br>
+							<mark>h1:</mark> Josefin Sans, sans-serif | size: 3rem | weight:700
+							<br><br>
+							<mark>h2:</mark> Josefin Sans, sans-serif | size: 2rem | weight:650
+							<br><br>
+							<mark>h3:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:600
+							<br><br>
+							<mark>i:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:100
+							<br><br>
+							<mark>p:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:100
+							<br><br>
+							<mark>u:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:100
+						</section>
+					<section class="color5" style="grid-area: color5;">
+							<h3>Mobile</h3><br>
+							&#8212 size: 1.5 | weight: 100
+							<br><br>
+							&#8212 size: 1.5 | weight 500
+							<br><br>
+							&#8212 size: 10vw | weight: 700
+							<br><br>
+							&#8212 size: 1.5rem | weight:500
+							<br><br>
+							&#8212 size: 3rem | weight:700
+							<br><br>
+							&#8212 size: 2rem | weight:650
+							<br><br>
+							&#8212 size: 1.5rem | weight:600
+							<br><br>
+							&#8212 size: 1.5rem | weight:100
+							<br><br>
+							&#8212 size: 1.5rem | weight:100
+							<br><br>
+							&#8212 size: 1.5rem | weight:100
+						</section>
+				</section>
+					<br><br>
+					<h1>Site Planning</h1><br>
 					<section class="body-grid-container">
 					<section class="div-content" style="grid-area: item1; width: 30vw;">
 						<b style="color:#FFFFFF">Landing Page</b>
 						</section>
 					<section class="div-content" style="grid-area:item2; background-color: #E281F6;">
+						<p>Users arrive at a floral animation that, when clicked, will begin loading the portfolio page, the specific link to which will sticky to the top of the page and its "About Me" slideshow. The "CAS" logo within the floral animation will become a floating navbar that transforms to fix itself to the top of the page. When clicked this logo will transform back to the center of the page while completing 3 revolutions clockwise, then resting at the bottom of the expanded vertical navbar, displaying links to the "About Me" slideshow if the user would like to restart it, a sticky link for the "Contact" section of the page, which would otherwise be found past the "Portfolio Cards", and finally, a field for external Socials.</p>
 						</section>
 					<section class="div-content" style="grid-area:item4; width: 30vw">
 						<b style="color:#FFFFFF">About Me</b>
 						</section>
 					<section class="div-content" style="grid-area:item5; background-color: #E281F6;">
+						<p>The "About Me" slideshow will include a few animated elements, mostly consisting of squigly arrows and spark illustrations as my story unfolds on the page. The "slideshow" is fairly simple otherwise, with images fading to transition into the next.<br><br>
+						<center><u><strong>IMPORTANTLY:</strong></u><br><br>
+						The "About Me" slideshow is skippable.<br>
+						<br> If the user chooses to scroll <b>DOWN</b> from this page, they will load the:<br>
+						"Portfolio Cards"</center></p>
 						</section>
 					<section class="div-content" style="grid-area:item6; width: 30vw">
 						<b style="color:#FFFFFF">Portfolio Cards</b>
 						</section>
 					<section class="div-content" style="grid-area:item7; background-color: #E281F6;">
+						<p>The "Portfolio Cards" load as users progress down the page. Depending on the size of the browser, the cards have a certain grid layout.<br>
+						
+						<li>For browsers <em>under 600px wide</em>, cards load in a <em>single column</em> layout.</li>
+						<li>Anything between <em>600px and 1024px wide</em> will load a <em>double column</em> layout.</li>
+						<li>Anything <em>above 1024px wide</em> will load a <em>triple column</em> layout.</li>
+						<li>Anything <em>above 600px</em> also supports a <i>Bento Box grid</i> layout, wherein certain pieces appear across multiple columns and/or rows, depending on which ones I would care to showcase most.</li>
+						
+						<br>
+						Cards first appear at the bottom of the page prior to load with a linear gradient of light purple to light blue overlaying them at 0.5 opacity. Once the user scrolls past 50% visibility for that bottom row of cards, the linear gradient will disappear. I must consider whether I would like the effect to reappear upon scrolling back up on the page.</p>
+						</section>
+					<section class="div-content" style="grid-area:item8; width: 30vw">
+						<b style="color:#FFFFFF">Case Studies</b>
+						</section>
+					<section class="div-content" style="grid-area:item10; background-color: #E281F6;">
+						There will be at least 3 separate click-through "Case Study" pages that will include detailed information on project briefs, process, and outcome/functionality.
+						<ol>
+							<li> Hi.</li>
+							<li> I have numbers?</li>
+							<li> Yippee!</li>
+							</ol>
+						</section>
+					<section class="div-content" style="grid-area:item13; width: 30vw">
+						<b style="color:#FFFFFF">Contact Me</b>
+						</section>
+					<section class="div-content" style="grid-area:item14; background-color: #E281F6;">
 						</section>
 					</section>
 			    </section>
