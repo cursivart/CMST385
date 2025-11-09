@@ -15,12 +15,227 @@
 </script>
 	<style type="text/css">
 		
+				/* Font rules code BEGIN */
+		
+			mark {
+				background-color: #E281F6;
+				color: #FFFFFF;
+				font-weight: 500;
+			}
+		
+			li {
+				text-indent: 2rem;
+				line-height: 2rem;
+			}
+		
+			ul {
+				font-family: "Josefin Sans", sans-serif;
+				font-size: 1rem;
+				font-weight: 100;
+				padding: .5rem;
+				margin: 1rem;
+				list-style-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 288 288'><rect class='st0' x='42.7' y='42.7' fill='%23210529' width='202.6' height='202.6' transform='translate(-59.6 144) rotate(-45)'/></svg>");
+			}
+		
+			ol {
+				font-family: "Josefin Sans", sans-serif;				
+				font-size: 1rem;
+				font-weight: 100;
+				padding: .5rem;
+				margin: 1rem;
+				}
+			
+			h1 {
+				font-family: "Kumar One", sans-serif;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin: 0rem;
+				background: #8180FF;
+				border-radius: 1rem;
+				padding: 1.5rem;
+				color: #FFFFFF;
+			}
+			
+			h2 {
+				font-family: "Josefin Sans", sans-serif;
+				font-size: 2rem;
+				font-weight: 650;
+				margin: 0rem;
+			}
+			
+			h3 {
+				font-family: "Josefin Sans", sans-serif;
+				font-size: 1.5rem;
+				font-weight: 600;
+				margin: 0rem;
+			}
+			
+			p {
+				font-family: "Josefin Sans", sans-serif;
+				font-size: 1rem;
+				font-weight: 100;
+				text-indent: 3rem;
+			}
+			
+			b {
+				font-family: "Josefin Sans", sans-serif;
+				font-size: 1rem;
+				font-weight: 700;
+			}
+			
+			u {
+				font-family: "Josefin Sans", sans-serif;
+				font-size: 1rem;
+				font-weight: 100;
+				text-decoration: underline;
+			}
+
+					/* Font rules code END */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				/* Navbar code START */
+		
+			:root {
+				--pill-size: 4rem;
+				--pill-height: 4rem;
+				--pill-width-expanded: 99vw;
+				--logo-size: 2rem;
+				--logo-offset-x: 1rem;
+				--logo-offset-y: 1rem;
+			}
+
+			#pill {
+				position: fixed;  
+				top: 1vw; left: 1vw;
+				width: var(--pill-size);
+				height: var(--pill-height);
+				background: #25032C;
+				border-radius: 50vw;
+				box-shadow: 0 0 1rem .1rem #E3EDF2;
+				transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+				display: flex;
+				align-items: flex-start;
+				justify-content: flex-start;
+				overflow: visible;
+				z-index: 2;
+			}
+		
+			#logo-toggle:checked + #pill {
+				width: var(--pill-width-expanded);
+			}
+		
+			#logo-btn {
+			position: absolute;
+			top: var(--logo-offset-y);
+			left: var(--logo-offset-x);
+			width: var(--logo-size);
+			height: var(--logo-size);
+			border-radius: 50%;
+			box-shadow: 0 0 0.8rem 0.05rem #bbb7;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: box-shadow 0.3s;
+			cursor: pointer;
+			border: none;
+			padding: 0;
+			z-index: 2;
+			}
+		
+			#logo-btn:active {
+				box-shadow: 0 0 1.1rem 0.3rem #aaa6;
+			}
+		
+			#logo {
+				width: 80%;
+				height: 80%;
+				border-radius: 50%;
+				display: block;
+			}
+
+			#logo-toggle:checked + #pill {
+			  z-index: 2;
+			}
+		
+					/* Navbar code END */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				/* Lightbox code START */
+		
+			.lightbox-overlay {
+				position: fixed;
+				z-index: 3;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 100vw; height: 100vh;
+				background: rgba(0,0,0,0.65);
+				display: none;
+				justify-content: center;
+				align-items: flex-start;
+				overflow: auto;
+			}
+			.lightbox-overlay:target { display: flex; }
+
+			.lightbox-image-container {
+				background: #fff;
+				margin-top: 10vh;
+				border-radius: 1.5rem;
+				box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.5);
+				max-width: 95vw;
+				padding: 1.5rem 1.5rem 1rem 1.5rem;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+			}
+
+			.lightbox-image-container img {
+				display: block;
+				max-width: 80vw;
+				width: auto;
+				height: auto;
+				margin: 0 auto;
+				box-shadow: 0 1rem 1rem rgba(0,0,0,0.5);
+				border-radius: 0.5rem;
+			}
+
+			.lightbox-close {
+				position: absolute;
+				top: 0.5rem;
+				right: 0.5rem;
+				color: #444;
+				border-radius: 1rem;
+				width: 25px; height: 25px;
+				text-align: center;
+				font-size: 2rem;
+				line-height: 2rem;
+				font-weight: bold;
+				text-decoration: none;
+				border: none;
+				cursor: pointer;
+				z-index: 2;
+				transition: background 0.2s, color 0.2s;
+				outline: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-bottom: 1rem;
+			}
+			.lightbox-close:hover {
+				color: red;
+			}
+		
+			/* Lightbox code END */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			/* Body & Section/DIV code START */
+		
 			#bodywrapper {
 				opacity: 0;
-				font-size: 1.5rem;
+				font-size: 1rem;
 				display: block;
 				place-items: center;
 				height: 100vh;
+				margin-top: 5rem;
 			}
 		
 			.body-grid-container {
@@ -42,158 +257,32 @@
 					"item12 item13 item13"
 					"item14 item14 item14";
 			}
-			
-			@media( max-width : 600px ){
-					.body-grid-container{
-					display: grid;
-					grid-gap: 1rem;
-					min-width: 0rem;
-					min-height: 0rem;
-					grid-template-columns: auto;
-					grid-template-rows: auto;
-					grid-template-areas:
-						"item1 item1 item1"
-						"item2 item2 item2"
-						"item3 item3 item3"
-						"item4 item4 item4"
-						"item5 item5 item5"
-						"item6 item6 item6"
-						"item7 item7 item7"
-						"item8 item8 item8"
-						"item9 item9 item9"
-						"item10 item10 item10"
-						"item11 item11 item11"
-						"item12 item12 item12"
-						"item13 item13 item14";
-					}
-				
-				.color-palette {
-					display: grid;
-					font-family: "Josefin Sans", sans-serif;
-					color: #FFFFFF;
-					text-align: center;
-					grid-gap: 1rem;
-					min-width: 0rem;
-					min-height: 0rem;
-					grid-template-columns: auto;
-					grid-template-rows: auto;
-					grid-template-areas:
-						"color1 color1 color1"
-						"color2 color2 color2"
-						"color3 color3 color3"
-						"color4 color4 color4"
-						"color5 color5 color5";
-				}
-				
-				.logo-container {
-					position: fixed;
-					left: .25rem;
-					top: 1rem;
-					max-width: 80px;
-					max-height: 80px;
-					background-image: url("image");
-					background-size: contain;
-					background-position: center;
-					background-repeat: no-repeat;
-						}
-
-				section.hero-image-attribution {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 1.5rem;
-					color: #FFFFFF;
-					text-align: right;
-					text-shadow: 0rem 0rem 0rem;
-					}
-				
-				ul {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 1.5rem;
-					font-weight: 100;
-					padding: .5rem;
-					list-style-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 288 288'><rect class='st0' x='42.7' y='42.7' fill='%23210529' width='202.6' height='202.6' transform='translate(-59.6 144) rotate(-45)'/></svg>");
-				}
-
-				h1 {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 3rem;
-					font-weight: 700;
-					margin: 0rem;
-				}
-
-				h2 {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 2rem;
-					font-weight: 650;
-					margin: 0rem;
-				}
-
-				h3 {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 1.5rem;
-					font-weight: 600;
-					margin: 0rem;
-				}
-
-				p {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 1.5rem;
-					font-weight: 100;
-				}
-
-				b {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 1.5rem;
-					font-weight: 700;
-				}
-
-				u {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 1.5rem;
-					font-weight: 100;
-					text-decoration: underline;
-				}
-				
-				i {
-					font-family: "Josefin Sans", sans-serif;
-					font-size: 1.5rem;
-					font-weight: 100;
-					font-style: italic;
-				}
-
-				section.body-content {
-					padding: 3rem;
-					font-display: block;
-					font-size: 2rem;
-					background-color: #E3EDF2;
-					}
-				}
 		
-				.color-palette {
-					display: grid;
-					text-align: center;
-					grid-gap: 1rem;
-					min-width: 0rem;
-					min-height: 0rem;
-					font-family: "Josefin Sans", sans-serif;
-					color: #FFFFFF;
-					font-weight: 100;
-					font-size: 1.5rem;
-					grid-template-columns: auto;
-					grid-template-rows: auto;
-					grid-template-areas:
-						"color1 color2 color3"
-						"color4 color4 color5";
+				
+			section.color-palette {
+				  display: grid;
+				  grid-gap: 1rem;
+				  min-width: 0;
+				  min-height: 0;
+				  font-family: "Josefin Sans", sans-serif;
+				  color: #FFFFFF;
+				  font-weight: 100;
+				  font-size: 1rem;
+				  grid-template-columns: 1fr 1fr 1fr;
+				  grid-template-areas:
+					"color1 color2 color3"
+					"color4 color4 color5";
 				}
 		
 			.color1 {
 				background-color: #002e54;
 				padding: 1.5rem;
 				border-radius: 1rem;
-				grid-area: "color1";
+				grid-area: color1;
 				color:#FFFFFF;
 				font-family: "Josefin Sans", sans-serif;
 				font-weight: 100;
-				font-size: 1.5rem;
+				font-size: 1rem;
 			}
 		
 		
@@ -201,11 +290,11 @@
 				background-color: #E281F6;
 				padding: 1.5rem;
 				border-radius: 1rem;
-				grid-area: "color2";
+				grid-area: color2;
 				color:#FFFFFF;
 				font-family: "Josefin Sans", sans-serif;
 				font-weight: 100;
-				font-size: 1.5rem;
+				font-size: 1rem;
 			}
 		
 		
@@ -213,40 +302,40 @@
 				background-color: #210529;
 				padding: 1.5rem;
 				border-radius: 1rem;
-				grid-area: "color3";
+				grid-area: color3;
 				color:#FFFFFF;
 				font-family: "Josefin Sans", sans-serif;
 				font-weight: 100;
-				font-size: 1.5rem;
-		}
+				font-size: 1rem;
+			}
 		
 			.color4 {
 				background-color: #002e54;
 				padding: 1.5rem;
 				border-radius: 1rem;
-				grid-area: "color4";
+				grid-area: color4;
 				color:#FFFFFF;
 				font-family: "Josefin Sans", sans-serif;
 				font-weight: 100;
-				font-size: 1.5rem;
+				font-size: 1rem;
 			}
 		
 			.color5 {
 				background-color: #210529;
 				padding: 1.5rem;
 				border-radius: 1rem;
-				grid-area: "color5";
+				grid-area: color5;
 				color:#FFFFFF;
 				font-family: "Josefin Sans", sans-serif;
 				font-weight: 100;
-				font-size: 1.5rem;
+				font-size: 1rem;
 			}
 		
 			.div-content {
 				font-family: "Josefin Sans", sans-serif;
 				background-color: #210529;
 				font-weight: 100;
-				font-size: 1.5rem;
+				font-size: 1rem;
 				padding: 1.5rem;
 				border-radius: 1rem;
 			}
@@ -256,7 +345,7 @@
 				font-weight: 900;
 				color: #FFFFFF;
 				background-image: linear-gradient(rgba(0,140,255,0), rgba(0,140,255,1)), url("image");
-				font-size: 3rem;
+				font-size: 1rem;
 				padding: 1.5rem;
 				border-radius: 1rem;
 			}
@@ -268,7 +357,7 @@
 				background-image: linear-gradient(rgba(235,235,255,0), rgba(205,210,55,1)), url("image");
 				background-position: bottom;
 				background-size: cover;
-				font-size: 3rem;
+				font-size: 1rem;
 				padding: 1.5rem;
 				border-radius: 1rem;
 			}
@@ -280,7 +369,7 @@
 				background-image: linear-gradient(rgba(235,235,255,0), rgba(90,200,205,1)), url("image");
 				background-position: top;
 				background-size: 40rem;
-				font-size: 3rem;
+				font-size: 1rem;
 				padding: 1.5rem;
 				border-radius: 1rem;
 			}
@@ -292,7 +381,7 @@
 				background-image: linear-gradient(rgba(235,235,255,0), rgba(255,0,255,1)), url("image");
 				background-position: top;
 				background-size: 40rem;
-				font-size: 3rem;
+				font-size: 1rem;
 				padding: 1.5rem;
 				border-radius: 1rem;
 			}
@@ -302,20 +391,8 @@
 				color: #999999;
 				border-style: dashed;
 			}
-			
-			.logo-container {
-				position: fixed;
-				left: .25rem;
-				top: 1rem;
-				width: 100px;
-				height: 100px;
-				background-image: url("image");
-				background-size: contain;
-				background-position: center;
-				background-repeat: no-repeat;
-			}
-			
-			
+		
+		
 			section.assignment-description {
 				text-shadow: #210529 0rem 0rem 1rem;
 				font-family: "Josefin Sans", sans-serif;
@@ -340,7 +417,7 @@
 			section.body-content {
 				padding: 3rem;
 				font-display: block;
-				font-size: 1.25rem;
+				font-size: 1rem;
 				background-color: #E3EDF2;
 				width: 80vw;
 				margin: auto;
@@ -389,67 +466,147 @@
 				text-shadow: 0rem 0rem 0rem;
 			}
 		
-			mark {
-				background-color: #E281F6;
-				color: #FFFFFF;
-				font-weight: 500;
-			}
+			/* Body & Section/DIV code END */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			/* Begin @600PX Media Query */
 		
-			ul {
-				font-family: "Josefin Sans", sans-serif;
-				font-size: 1.5rem;
-				font-weight: 100;
-				padding: .5rem;
-				list-style-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 288 288'><rect class='st0' x='42.7' y='42.7' fill='%23210529' width='202.6' height='202.6' transform='translate(-59.6 144) rotate(-45)'/></svg>");
-			}
-			
-			h1 {
-				font-family: "Josefin Sans", sans-serif;
-				font-size: 3rem;
-				font-weight: 700;
-				margin: 0rem;
-			}
-			
-			h2 {
-				font-family: "Josefin Sans", sans-serif;
-				font-size: 2rem;
-				font-weight: 650;
-				margin: 0rem;
-			}
-			
-			h3 {
-				font-family: "Josefin Sans", sans-serif;
-				font-size: 1.5rem;
-				font-weight: 600;
-				margin: 0rem;
-			}
-			
-			p {
-				font-family: "Josefin Sans", sans-serif;
-				font-size: 1.5rem;
-				font-weight: 100;
-			}
-			
-			b {
-				font-family: "Josefin Sans", sans-serif;
-				font-size: 1.5rem;
-				font-weight: 700;
-			}
-			
-			u {
-				font-family: "Josefin Sans", sans-serif;
-				font-size: 1.5rem;
-				font-weight: 100;
-				text-decoration: underline;
-			}
-		
+						@media( max-width : 600px ){
+								.body-grid-container{
+								display: grid;
+								grid-gap: 1rem;
+								min-width: 0rem;
+								min-height: 0rem;
+								grid-template-columns: 1fr;
+								grid-template-rows: auto;
+								grid-template-areas:
+									"item1 item1 item1"
+									"item2 item2 item2"
+									"item3 item3 item3"
+									"item4 item4 item4"
+									"item5 item5 item5"
+									"item6 item6 item6"
+									"item7 item7 item7"
+									"item8 item8 item8"
+									"item9 item9 item9"
+									"item10 item10 item10"
+									"item11 item11 item11"
+									"item12 item12 item12"
+									"item13 item13 item14";
+								}
+
+							section.color-palette {
+								display: grid;
+								grid-template-columns: 1fr !important;
+								grid-auto-flow: row;
+								grid-template-areas:
+								  "color1"
+								  "color2"
+								  "color3"
+								  "color4"
+								  "color5";
+								}
+
+							:root {
+								--pill-size: 3rem;
+								--pill-height: 3rem;
+								--pill-width-expanded: 90vw;
+								--pill-min-width: 10rem;
+								--logo-size: 2rem;
+								--logo-offset-x: 0.5rem;
+								--logo-offset-y: 0.5rem;
+							  }
+
+							section.hero-image-attribution {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 1.5rem;
+								color: #FFFFFF;
+								text-align: right;
+								text-shadow: 0rem 0rem 0rem;
+								}
+
+							ul {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 1.5rem;
+								font-weight: 100;
+								padding: .5rem;
+								margin: 1rem;
+								list-style-image: url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 288 288'><rect class='st0' x='42.7' y='42.7' fill='%23210529' width='202.6' height='202.6' transform='translate(-59.6 144) rotate(-45)'/></svg>");
+							}
+
+							ol {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 1.5rem;
+								font-weight: 100;
+								padding: .5rem;
+								margin: 1rem;
+							}
+
+							h1 {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 3rem;
+								font-weight: 700;
+								margin: 0rem;
+							}
+
+							h2 {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 2rem;
+								font-weight: 650;
+								margin: 0rem;
+							}
+
+							h3 {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 1.5rem;
+								font-weight: 600;
+								margin: 0rem;
+							}
+
+							p {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 1.5rem;
+								font-weight: 100;
+								text-indent: 3rem;
+							}
+
+							b {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 1.5rem;
+								font-weight: 700;
+							}
+
+							u {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 1.5rem;
+								font-weight: 100;
+								text-decoration: underline;
+							}
+
+							i {
+								font-family: "Josefin Sans", sans-serif;
+								font-size: 1.5rem;
+								font-weight: 100;
+								font-style: italic;
+							}
+
+							section.body-content {
+								padding: 3rem;
+								font-display: block;
+								font-size: 2rem;
+								background-color: #E3EDF2;
+								}
+						}
 	</style>
 </head>
-
 <body>
-<div id="bodywrapper">
-		<div class="logo-container"></div>
-		<br>
+  <input type="checkbox" id="logo-toggle" hidden>
+  <div id="pill">
+    <label for="logo-toggle" id="logo-btn" title="Open/Pull">
+      <img src="imgs/cas-logo-white-cleanedup.svg" id="logo" alt="Logo">
+    </label>
+
+  </div>
+	<div id="bodywrapper">
 		<section class="body">
 			<section class="hero-image">
 				<section class="assignment-description">
@@ -465,22 +622,22 @@
 					<h1>Design</h1><br>
 					<h2>Color Palette</h2><br>
 				<section class="color-palette">
-						<section class="color1"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
-						<section class="color2"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
-						<section class="color3"><strong>HEX</strong> #111111 | <strong>RGB</strong> 1,1,1</section>
+						<section class="color1" style="grid-area: color1;"><strong>HEX</strong> #002E54<br><br><strong>RGB</strong> 0,46,84</section>
+						<section class="color2" style="grid-area: color2;"><strong>HEX</strong> #E281F6<br><br><strong>RGB</strong> 226,129,246</section>
+						<section class="color3" style="grid-area: color3;"><strong>HEX</strong> #210429<br><br><strong>RGB</strong> 33,4,41</section>
 				    </section>
 						<br>
 						<h2>Typeface Rules</h2>
 					<section class="color-palette">
 						<section class="color4" style="grid-area: color4;">
 							<h3>Desktop</h3><br>
-							<mark>ul, li, ol:</mark> Josefin Sans, sans-serif | size: 1.5 | weight: 100
+							<mark>ul, li, ol:</mark> Josefin Sans, sans-serif | size: 1 | weight: 100
 							<br><br>
-							<mark>mark:</mark> Josefin Sans, sans-serif | size: 1.5 | weight 500
+							<mark>mark:</mark> Josefin Sans, sans-serif | size: 1 | weight 500
 							<br><br>
 							<mark>.hero:</mark> Kumar One, sans-serif | size: 10vw | weight: 700
 							<br><br>
-							<mark>b:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:500
+							<mark>b:</mark> Josefin Sans, sans-serif | size: 1rem | weight:500
 							<br><br>
 							<mark>h1:</mark> Josefin Sans, sans-serif | size: 3rem | weight:700
 							<br><br>
@@ -488,11 +645,11 @@
 							<br><br>
 							<mark>h3:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:600
 							<br><br>
-							<mark>i:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:100
+							<mark>i:</mark> Josefin Sans, sans-serif | size: 1rem | weight:100
 							<br><br>
-							<mark>p:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:100
+							<mark>p:</mark> Josefin Sans, sans-serif | size: 1rem | weight:100
 							<br><br>
-							<mark>u:</mark> Josefin Sans, sans-serif | size: 1.5rem | weight:100
+							<mark>u:</mark> Josefin Sans, sans-serif | size: 1rem | weight:100
 						</section>
 					<section class="color5" style="grid-area: color5;">
 							<h3>Mobile</h3><br>
@@ -521,10 +678,18 @@
 					<h1>Site Planning</h1><br>
 					<section class="body-grid-container">
 					<section class="div-content" style="grid-area: item1; width: 30vw;">
-						<b style="color:#FFFFFF">Landing Page</b>
+						<b style="color:#FFFFFF"><a href="#lbimg">Landing Page</a></b>
+
+						  <div id="lbimg" class="lightbox-overlay">
+							<div class="lightbox-image-container">
+							  <a href="#" class="lightbox-close" title="Close">&times;</a>
+							  <img src="imgs/Portfolio-Website_Diagram.png" alt="Sitemap Example">
+							</div>
+						  </div>
+						
 						</section>
 					<section class="div-content" style="grid-area:item2; background-color: #E281F6;">
-						<p>Users arrive at a floral animation that, when clicked, will begin loading the portfolio page, the specific link to which will sticky to the top of the page and its "About Me" slideshow. The "CAS" logo within the floral animation will become a floating navbar that transforms to fix itself to the top of the page. When clicked this logo will transform back to the center of the page while completing 3 revolutions clockwise, then resting at the bottom of the expanded vertical navbar, displaying links to the "About Me" slideshow if the user would like to restart it, a sticky link for the "Contact" section of the page, which would otherwise be found past the "Portfolio Cards", and finally, a field for external Socials.</p>
+							<p>Users arrive at a floral animation that, when clicked, will begin loading the portfolio page. The "CAS" logo will stick to the upper-left corner of the page on the new navbar and the "About Me" slideshow will begin. The "About Me" slideshow can be scrolled past if the user doesn't want to sit through it, but it does take up the full viewport. The navbar will contain</p>
 						</section>
 					<section class="div-content" style="grid-area:item4; width: 30vw">
 						<b style="color:#FFFFFF">About Me</b>
@@ -540,21 +705,20 @@
 						<b style="color:#FFFFFF">Portfolio Cards</b>
 						</section>
 					<section class="div-content" style="grid-area:item7; background-color: #E281F6;">
-						<p>The "Portfolio Cards" load as users progress down the page. Depending on the size of the browser, the cards have a certain grid layout.<br>
+						<p>The "Portfolio Cards" load as users progress down the page. Depending on the size of the browser, the cards have a certain grid layout.</p>
 						<ul>
 						<li>For browsers <em>under 600px wide</em>, cards load in a <em>single column</em> layout.</li>
 						<li>Anything between <em>600px and 1024px wide</em> will load a <em>double column</em> layout.</li>
 						<li>Anything <em>above 1024px wide</em> will load a <em>triple column</em> layout.</li>
 						<li>Anything <em>above 600px</em> also supports a <i>Bento Box grid</i> layout, wherein certain pieces appear across multiple columns and/or rows, depending on which ones I would care to showcase most.</li>
 						</ul>
-						<br>
-						Cards first appear at the bottom of the page prior to load with a linear gradient of light purple to light blue overlaying them at 0.5 opacity. Once the user scrolls past 50% visibility for that bottom row of cards, the linear gradient will disappear. I must consider whether I would like the effect to reappear upon scrolling back up on the page.</p>
+						<p>Cards first appear at the bottom of the page prior to load with a linear gradient of light purple to light blue overlaying them at 0.5 opacity. Once the user scrolls past 50% visibility for that bottom row of cards, the linear gradient will disappear. I must consider whether I would like the effect to reappear upon scrolling back up on the page.</p>
 						</section>
 					<section class="div-content" style="grid-area:item8; width: 30vw">
 						<b style="color:#FFFFFF">Case Studies</b>
 						</section>
 					<section class="div-content" style="grid-area:item10; background-color: #E281F6;">
-						There will be at least 3 separate click-through "Case Study" pages that will include detailed information on project briefs, process, and outcome/functionality.
+						<p>There will be at least 3 separate click-through "Case Study" pages that will include detailed information on project briefs, process, and outcome/functionality.</p>
 						<ol>
 							<li> Hi.</li>
 							<li> I have numbers?</li>
