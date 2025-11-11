@@ -177,11 +177,9 @@
 			.lightbox-overlay:target { display: flex; }
 
 			.lightbox-image-container {
-				background: #fff;
-				margin-top: 10vh;
 				border-radius: 1.5rem;
-				box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.5);
-				max-width: 95vw;
+				width: 100vw;
+				height: 100vh;
 				padding: 1.5rem 1.5rem 1rem 1.5rem;
 				position: relative;
 				display: flex;
@@ -584,8 +582,6 @@
 
 							u {
 								font-family: "Josefin Sans", sans-serif;
-								font-size: 1rem;
-								font-weight: 100;
 								text-decoration: underline;
 							}
 
@@ -741,8 +737,6 @@
 
 							u {
 								font-family: "Josefin Sans", sans-serif;
-								font-size: 1rem;
-								font-weight: 100;
 								text-decoration: underline;
 							}
 
