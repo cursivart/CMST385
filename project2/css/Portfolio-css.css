@@ -404,6 +404,7 @@
 			section.body-content img {
 				display: block;
 				width: 60vw;
+				margin: 0 auto;
 			}
 			
 			section.hero-image {
