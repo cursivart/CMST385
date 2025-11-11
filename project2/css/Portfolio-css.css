@@ -648,16 +648,6 @@
 								width: 80vw;
 							}
 
-							:root {
-								--pill-size: 3rem;
-								--pill-height: 3rem;
-								--pill-width-expanded: 90vw;
-								--pill-min-width: 10rem;
-								--logo-size: 2rem;
-								--logo-offset-x: 0.5rem;
-								--logo-offset-y: 0.5rem;
-							  }
-							
 							.div-content {
 								font-family: "Josefin Sans", sans-serif;
 								font-weight: 100;
