@@ -8,6 +8,18 @@
 				color: #FFFFFF;
 				font-weight: 500;
 			}
+
+@media (max-width: 600px) {
+	footer {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-top: 2rem;
+		padding-bottom: 1rem;
+	}
+	.socials-container {
+		width: 90vw;
+	}
+}
 		
 			li {
 				text-indent: 2rem;
@@ -227,7 +239,8 @@
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 			/* Body & Section/DIV code START */
 			body {
-				height: 100vh;
+				min-height: 100vh;
+				margin: 0;
 				font-family: "Josefin Sans", sans-serif;
 				font-size: 1rem;
 				color: #25032C;
@@ -340,7 +353,11 @@
 				padding-bottom: 2rem;
 				align-items: center;
 				justify-content: center;
-				background: linear-gradient(rgba(227,237,242,1),rgba(128,128,255,1))
+				background: linear-gradient(rgba(227,237,242,1),rgba(128,128,255,1));
+				width: 100vw;
+				margin-left: calc(50% - 50vw);
+				margin-right: calc(50% - 50vw);
+				box-sizing: border-box;
 			}
 
 			.socials-container {
@@ -409,14 +426,25 @@
 			
 			section.hero-image {
 				background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(227, 237, 242, 1)), url("../imgs/bouquet-outline@100x.png");
-				background-size: 100%;
+				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: center;
-				height: auto;
+				min-height: 60vh;
 				z-index: 1;
+				width: 100vw;
+				margin-left: calc(50% - 50vw);
+				margin-right: calc(50% - 50vw);
+				box-sizing: border-box;
+			}
+
+			.hero-inner {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 3rem;
+				box-sizing: border-box;
 			}
 			
-			section.hero-image-text {
+			.hero-image-text {
 				font-family: "Kumar One", sans-serif;
 				padding: 3rem;
 				box-sizing: border-box;
@@ -486,7 +514,7 @@
 								border-radius: 1rem;
 							}
 							
-							section.hero-image-text {
+							.hero-image-text {
 								font-family: "Kumar One", sans-serif;
 								letter-spacing: 0rem;
 								font-size: 15vw;
@@ -555,7 +583,7 @@
 								margin: 0rem;
 							}
 
-							h3 {
+									section.hero-image-attribution {
 								font-family: "Josefin Sans", sans-serif;
 								font-size: 2rem;
 								font-weight: 600;
@@ -652,7 +680,7 @@
 								border-radius: 1rem;
 							}
 							
-							section.hero-image-text {
+							.hero-image-text {
 								font-family: "Kumar One", sans-serif;
 								letter-spacing: 0rem;
 								font-size: 15vw;
