@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* CSS Document */
+
+	body {
+		
+	}
+	
+	.banner-wrapper {
+		display: flex;
+		place-items: center;
+		height: 100vh;
+	}
+	
+	.intro-banner-container {
+		width: 20rem;
+		height: 30rem;
+		background-image: radial-gradient(ellipse 15rem 20rem, rgba(235,235,255,.0), rgba(0,46,84,1)),
+		url("../imgs/Roses-in-the-wind.gif");
+		background-color: rgba(0,46,84,1);
+		background-opacity: multiply;
+		background-size: 500%;
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: 10rem;
+		display: block;
+		margin: 0 auto;
+		transition: all 200ms ease-in;
+	}
+	
+	
+	.intro-banner-container:hover {
+		background-color: rgba(255,255,255,1);
+	}
+	
+	.logo {
+		width: 10rem;
+		display: block;
+		margin: auto;
+		align-items: center;
+		height: 100%;
+	}
+	
+	.logo img {
+		width: 10rem;
+		display: block;
+		margin: auto;
+		align-items: center;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 200ms ease-in-out, scale 1s ease-in-out;
+		transform: opacity(0), scale(1);
+	}
+	
+	.logo img:hover {
+		opacity: 1;
+	}
+	
+	.logo img:active {
+		transform: scale(1.05);
+	}
