@@ -71,8 +71,9 @@
 		.bodywrapper {
 			display: grid;
 			grid-auto-columns: 1fr 2fr;
+			gap: 1rem;
 			grid-column-areas:
-				"discography biography"
+				"discography biography";
 			position: absolute;
 			top: 1000px;
 			left: 0px;
@@ -97,13 +98,15 @@
 			padding-left: 5rem;
 		}
 		
-.timeline-section {
-  position: relative;
-  display: flex;       /* So label and timeline are alongside */
+.discography {
+  grid-column: 1;
+  display: flex;
   flex-direction: row;
   align-items: stretch;
   height: 100%;
-		}
+  background: rgba(255,255,255,0.03); /* optional */
+  min-width: 0;
+}
 
 .vertical-label {
 	writing-mode: vertical-lr;
@@ -119,14 +122,19 @@
 }
 
 .timeline {
-  /* your existing styles, but remove grid/flex from here if you want it vertical */
   border-left: 2px solid #FFBC0A;
-  padding-left: 2rem; /* for space between border and content */
-  min-height: 90vh;   /* or as you wish */
+  padding-left: 2rem;
+  min-height: 90vh;
 }
 		
-		.main-content {
-			padding: 5rem;
+		.biography {
+			grid-column: 2;
+			min-width: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			padding: 3rem;
+			margin-top: 5rem;
 		}
 		
 		.year-label {
@@ -219,9 +227,8 @@
 	<div class="dmb-logo">
 		</div>
 	<section class="bodywrapper">
-		<div class="timeline-section">
+		<div class="discography">
 			<div class="vertical-label">Discography</div>
-			
 			<div class="timeline">
 				<div class="album" ...>
 				<div class="year-label">1993</div>
@@ -289,9 +296,9 @@
 						<div class="album-info"></div>
 					</div>
 			</div>
-			
-			 <div class="main-content">
-    <b> TESTING CONTENT</b>
+		</div>
+			 <div class="biography">
+    			<p></p>
   			</div>
 		</div>
 	</section>
