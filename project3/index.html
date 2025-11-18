@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.album').forEach(album => {
+    album.addEventListener('click', function() {
+      // Remove 'active' from all albums
+      document.querySelectorAll('.album').forEach(a => a.classList.remove('active'));
+
+      // Set this album as active (enlarge and show info)
+      this.classList.add('active');
+
+      // Insert album details
+      const infoDiv = this.querySelector('.album-info');
+      infoDiv.innerHTML = `
+        <strong>${this.dataset.title}</strong> (${this.dataset.year})<br>
+        <em>by ${this.dataset.artist}</em><br>
+        ${this.dataset.info}
+      `;
+    });
+  });
+});
+	</script>
 	<style>
+		
 		html, body {
 			height: 100%;
+			min-height: 100%;
 			margin: 0;
 			padding: 0;
 		}
@@ -17,142 +40,259 @@
 		
 		.dmb-logo {
 			background-image: url('imgs/Dave-Matthew-Band_Logo-w-circle2.svg');
+			filter: drop-shadow(0rem 0rem 3rem #9AACC6);
 			position: fixed;
 			top: 50%;
 			left: 50%;
 			width: 400px;
 			height: 400px;
 			z-index: 2;
+			opacity: 0;
 			transform: translate(-50%, -50%);
-			}
-		
-		.mountains {
-			position: absolute;
-			top: 500px;
-			width: 100vw;
-			height: 700px;
-			z-index: 3;
-			background-image: url("imgs/Blue-ridge-mountains_transparent-bg.png");
-			background-size: cover;
-			overflow: hidden; /* Ensures pseudo element doesn't overflow */
+			animation: logo-fadein 1.5s cubic-bezier(0.4,0,0.2,1) forwards;
+			transition: filter .5s ease-in-out;
 		}
 		
-		.treeline1 {
-			width: 100vw;
-			height: 280px;
-			opacity: 40%;
-			position: absolute;
-			top: 740px;
-			left: 0px;
-			background-image: url("imgs/treeline/treeline-5@100x.svg");
-			background-position: top;
-			background-repeat: repeat-x;
-			background-size: cover;
-			z-index: 4;
-		}
-		
-		.treeline2 {
-			width: 100vw;
-			height: 280px;
-			opacity: 60%;
-			position: absolute;
-			top: 750px;
-			left: 0px;
-			background-image: url("imgs/treeline/treeline-4@100x.svg");
-			background-position: top;
-			background-repeat: repeat-x;
-			background-size: cover;
-			z-index: 4;
-		}
-		
-		.treeline3 {
-			width: 100vw;
-			height: 280px;
-			opacity: 80%;
-			position: absolute;
-			top: 760px;
-			left: 0px;
-			background-image: url("imgs/treeline/treeline-3@100x.svg");
-			background-position: top;
-			background-repeat: repeat-x;
-			background-size: cover;
-			z-index: 4;
+		.dmb-logo:hover {
+			filter:
+				drop-shadow(0 0 3rem #FFBC0A)
+				sepia(1)
+				hue-rotate(15deg)
+				saturate(5)
+				brightness(1.2);
 		}
 
-		.treeline4 {
-			width: 100vw;
-			height: 280px;
-			opacity: 100%;
-			position: absolute;
-			top: 800px;
-			left: 0px;
-			background-image: url("imgs/treeline/treeline-2@100x.svg");
-			background-position: top;
-			background-repeat: repeat-x;
-			background-size: cover;
-			z-index: 4;
+		@keyframes logo-fadein {
+			to {
+				opacity: 1;
+		  }
 		}
-
-		.treeline5 {
-			width: 100vw;
-			height: 350px;
-			opacity: 100%;
-			position: absolute;
-			top: 775px;
-			left: 0px;
-			background-image: url("imgs/treeline/treeline-1@100x.svg");
-			background-position: bottom;
-			background-repeat: repeat-x;
-			background-size: cover;
-			z-index: 4;
-		}
-		
-		.treeline5::after {
-			content: "";
-			position: absolute;
-			left: 0; right: 0; bottom: 0;
-			height: 40%; /* Adjust as needed */
-			pointer-events: none;
-			background: linear-gradient(
-				to bottom,
-				rgba(255,255,255,0) 0%,
-				#120002 100%
-			  );
-		}
-
 
 		.bodywrapper {
+			display: grid;
+			grid-auto-columns: 1fr 2fr;
+			grid-column-areas:
+				"discography biography"
 			position: absolute;
-			top: 1050px;
+			top: 1000px;
 			left: 0px;
-			display: block;
-			background-color: #120002;
+			background-image: url("imgs/Blue-ridge-mountains_transparent-bg.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
 			width: 100vw;
-			height: 100vh;
+			min-height: 100vh;
 			z-index: 5;
 		}
+		
+		.timeline {
+			position: relative;
+  			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin: 3rem 0 0 2rem;
+			height: auto;
+			border-left: 2px solid #FFBC0A; /* vertical timeline line */
+			border-bottom: none;
+			padding-left: 5rem;
+		}
+		
+.timeline-section {
+  position: relative;
+  display: flex;       /* So label and timeline are alongside */
+  flex-direction: row;
+  align-items: stretch;
+  height: 100%;
+		}
+
+.vertical-label {
+	writing-mode: vertical-lr;
+	text-orientation: mixed;
+	font-size: 1.4rem;
+	letter-spacing: 0.1em;
+	color: #FFBC0A;
+	font-weight: bold;
+	margin-right: 0.8rem;
+	margin-left: 3rem;
+	margin-top: 50vh;
+	align-self: flex-start;
+}
+
+.timeline {
+  /* your existing styles, but remove grid/flex from here if you want it vertical */
+  border-left: 2px solid #FFBC0A;
+  padding-left: 2rem; /* for space between border and content */
+  min-height: 90vh;   /* or as you wish */
+}
+		
+		.main-content {
+			padding: 5rem;
+		}
+		
+		.year-label {
+			left: -2.5rem;
+			bottom: 0;
+			font-size: 1rem;
+			width: 4rem;
+			text-align: right;
+			position: static;      /* not absolute if vertical */
+			margin-bottom: -1.3rem;
+			margin-left: -5.5rem;  /* adjust for timeline line */
+			color: #FFBC0A;
+			font-size: 1rem;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.3s;
+			width: 6rem;
+			text-align: right;
+		}
+		
+		.album:hover .year-label {
+			opacity: 1;
+			pointer-events: auto;
+		}
+		
+    .album {
+		cursor: pointer;
+		transition: transform 0.25s cubic-bezier(.65,0,.35,1);
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		margin: 1.5rem 0;
+		position: relative;
+    }
+		
+    .album img {
+		width: 100px;
+		border-radius: 10px;
+		box-shadow: 0 2px 10px #1118;
+		transition: box-shadow 0.4s, transform 0.4s;
+		border: 3px solid #222;
+		margin-left: 1.2rem;
+    }
+		
+    .album.active img {
+		transform: scale(1.22);
+		box-shadow: 0 8px 30px #FFBC0A99, 0 2px 10px #111a;
+		border-color: #FFBC0A;
+		z-index: 2;
+    }
+		
+    .album-info {
+		display: none;
+		position: absolute;
+		top: -140px;
+		left: 50%;
+		transform: translateX(-50%);
+		min-width: 220px;
+		background: #FFFCE4;
+		color: #222;
+		border-radius: 10px;
+		box-shadow: 0 8px 24px #1115;
+		padding: 1rem 1.1rem;
+		font-size: 1.08em;
+		z-index: 5;
+		border: 2px solid #FFBC0A;
+		pointer-events: none;
+    }
+		
+    .album.active .album-info {
+		display: block;
+		animation: fadein 0.6s;
+    }
+		
+    @keyframes fadein {
+		from { opacity: 0; transform: translateX(-50%) translateY(25px);}
+		to { opacity: 1; transform: translateX(-50%) translateY(0);}
+    }
+		
+    @media (max-width: 600px) {
+		.timeline { flex-direction: column; height: auto; border-bottom: none; }
+		.album { margin: 2rem 0; }
+		.year-label { left: -3.5rem; top: 45px; bottom: auto;}
+    }
 		
 	</style>
 <title>Dave Matthews Band</title>
 </head>
-
 <body>
 	<div class="dmb-logo">
 		</div>
-	<div class="mountains">
-		</div>
-	<div class="treeline1">
-		</div>
-	<div class="treeline2">
-		</div>
-	<div class="treeline3">
-		</div>
-	<div class="treeline4">
-		</div>
-	<div class="treeline5">
-		</div>
 	<section class="bodywrapper">
-		hello
-		</section>
+		<div class="timeline-section">
+			<div class="vertical-label">Discography</div>
+			
+			<div class="timeline">
+				<div class="album" ...>
+				<div class="year-label">1993</div>
+					<img src="imgs/album-art/dave-matthews-band-walk-around-the-moon-album-cover.jpg">
+					<div class="album-info"></div>
+				</div>
+
+				<div class="album" ...>
+					<div class="year-label">1994</div>
+					<img src="imgs/album-art/dmb-away-from-the-world.jpg">
+					<div class="album-info"></div>
+				</div>
+
+					<div class="album" ...>
+						<div class="year-label">1996</div>
+						<img src="imgs/album-art/dmb-before-these-crowded-streets.jpg">
+						<div class="album-info"></div>
+					</div>
+
+				  <div class="album" ...>
+					<div class="year-label">1998</div>
+					<img src="imgs/album-art/dmb-big-whiskey-and-the-groogrux-king.jpg">
+					<div class="album-info"></div>
+				  </div>
+
+				  <div class="album" ...>
+					<div class="year-label">2001</div>
+					<img src="imgs/album-art/dmb-busted-stuff.jpg">
+					<div class="album-info"></div>
+				  </div>
+
+				  <div class="album" ...>
+					<div class="year-label">2002</div>
+					<img src="imgs/album-art/dmb-come-tomorrow.jpg">
+					<div class="album-info"></div>
+				  </div>
+
+				 <div class="album" ...>
+					<div class="year-label">2005</div>
+					<img src="imgs/album-art/dave-matthews-band-walk-around-the-moon-album-cover.jpg">
+					<div class="album-info"></div>
+				  </div>
+
+				  <div class="album" ...>
+					<div class="year-label">2009</div>
+					<img src="imgs/album-art/dave-matthews-band-walk-around-the-moon-album-cover.jpg">
+					<div class="album-info"></div>
+				  </div>
+
+				  <div class="album" ...>
+					<div class="year-label">2012</div>
+					<img src="imgs/album-art/dave-matthews-band-walk-around-the-moon-album-cover.jpg">
+					<div class="album-info"></div>
+				  </div>
+
+				  <div class="album" ...>
+					<div class="year-label">2018</div>
+					<img src="imgs/album-art/dave-matthews-band-walk-around-the-moon-album-cover.jpg">
+					<div class="album-info"></div>
+				  </div>
+
+					<div class="album" ...>
+						<div class="year-label">2023</div>
+						<img src="imgs/album-art/dave-matthews-band-walk-around-the-moon-album-cover.jpg">
+						<div class="album-info"></div>
+					</div>
+			</div>
+			
+			 <div class="main-content">
+    <b> TESTING CONTENT</b>
+  			</div>
+		</div>
+	</section>
 </body>
-</html>
