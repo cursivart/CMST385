@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/* CSS Document */
+
+	html,body {
+		height: 100%;
+		min-height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background-image: linear-gradient(to bottom, #e2f4f8, #cecece);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+
+	.dmb-logo {
+		background-image: url("../imgs/Dave-Matthew-Band_Logo-w-circle2.svg");
+		filter: drop-shadow(0rem 0rem 3rem #9aacc6);
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		height: 400px;
+		z-index: 2;
+		opacity: 0;
+		transform: translate(-50%, -50%);
+		animation: logo-fadein 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+		transition: filter 0.5s ease-in-out;
+	}
+
+	@keyframes logo-fadein {
+		to {
+			opacity: 1;
+		}
+	}
+
+	.bodywrapper {
+		display: grid;
+		grid-auto-columns: 1fr 2fr;
+		gap: 1rem;
+		grid-column-areas:
+			"discography biography";
+		position: absolute;
+		padding-top: 15rem;
+		top: 1000px;
+		left: 0px;
+		background-image: url("../imgs/Blue-ridge-mountains_transparent-bg.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: top;
+		width: 100vw;
+		z-index: 5;
+	}
+
+	.timeline {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin: 3rem 0 0 2rem;
+		height: auto;
+		border-left: 2px solid #ffbc0a; /* vertical timeline line */
+		border-bottom: none;
+		padding-left: 5rem;
+	}
+
+	.discography {
+		grid-column: 1;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.03); /* optional */
+		min-width: 0;
+	}
+
+	.vertical-label {
+		writing-mode: vertical-lr;
+		text-orientation: mixed;
+		font-family: "Big Shoulders", sans-serif;
+		font-size: 1.4rem;
+		letter-spacing: 0.1em;
+		color: #FFBC0A;
+		font-weight: bold;
+		margin-right: 0.8rem;
+		margin-left: 3rem;
+		margin-top: 50vh;
+		align-self: flex-start;
+	}
+
+	.timeline {
+		border-left: 2px solid #ffbc0a;
+		padding-left: 2rem;
+		min-height: 90vh;
+	}
+
+	.biography {
+		box-shadow: 0rem 2rem 2rem rgba(0,0,0,.2);
+		position: relative;
+		background-color: #FFB800;
+		padding-left: 2rem;
+		min-height: 90vh;
+		grid-column: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		box-sizing: border-box;
+		}
+	
+.biography::before {
+	box-sizing: border-box;
+	width: 100%;
+	content: "";
+	display: block;
+	position: absolute;
+	top: -3rem; left: 0;
+	width: 100%;
+	height: 3rem; /* or whatever looks good */
+	background: -webkit-linear-gradient(transparent, #FFB800);
+	background: -o-linear-gradient(transparent, #FFB800);
+	background: linear-gradient(transparent, #FFB800);
+	pointer-events: none; /* allows clicks through to .biography content */
+	z-index: 1;
+}
+		
+	footer {
+		display: flex;
+		color: #FFFFFF;
+		font-family: "IBM Plex Sans Condensed";
+		align-content: center;
+		justify-content: space-between;
+		padding-left: 5rem;
+		padding-right: 5rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+		
+		footer img {
+		border-radius: 5rem;
+		width: 3rem;
+		height: 3rem;
+		}
+		
+	.content {
+		padding: 2rem;
+	}
+
+	.year-label {
+		left: -2.5rem;
+		bottom: 0;
+		font-size: 1rem;
+		width: 4rem;
+		text-align: right;
+		position: static; /* not absolute if vertical */
+		margin-bottom: -1.3rem;
+		margin-left: -5.5rem; /* adjust for timeline line */
+		color: #ffbc0a;
+		font-size: 1rem;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s;
+		width: 6rem;
+		text-align: right;
+	}
+
+/* NAVBAR BEGIN */
+		
+	.navbar-container {
+		display: flex;
+		gap: 5rem;
+		position: sticky;
+		top: 0px;
+		left: 0px;
+		font-family: "Big Shoulders", sans-serif;
+		size: 3rem;
+		color: #96ACC9;
+		text-align: center;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+		height: 2rem;
+		width: 100vw;
+		z-index: 10;
+	}
+
+	/* NAVBAR END
+~~~~~~~~~~~~~~~~~~~~~~~
+	ALBUMS BEGIN */
+
+	.album:hover .year-label {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.album {
+		cursor: pointer;
+		transition: transform 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		margin: 1.5rem 0;
+		position: relative;
+	}
+
+	.album img {
+		width: 100px;
+		border-radius: 10px;
+		box-shadow: 0 2px 10px #1118;
+		transition:
+			box-shadow 0.4s,
+			transform 0.4s;
+		border: 3px solid #222;
+		margin-left: 1.2rem;
+	}
+
+	.album.active img {
+		transform: scale(1.22);
+		box-shadow:
+			0 8px 30px #ffbc0a99,
+			0 2px 10px #111a;
+		border-color: #ffbc0a;
+		z-index: 2;
+	}
+
+	.album-info {
+		display: none;
+		position: absolute;
+		top: -140px;
+		left: 50%;
+		transform: translateX(-50%);
+		min-width: 220px;
+		background: #fffce4;
+		color: #222;
+		border-radius: 10px;
+		box-shadow: 0 8px 24px #1115;
+		padding: 1rem 1.1rem;
+		font-size: 1.08em;
+		z-index: 5;
+		border: 2px solid #ffbc0a;
+		pointer-events: none;
+	}
+
+	.album.active .album-info {
+		display: block;
+		animation: fadein 0.6s;
+	}
+
+	@keyframes fadein {
+		from {
+			opacity: 0;
+			transform: translateX(-50%) translateY(25px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+	}
+		
+/* MEDIA QUERY BEGIN */
+
+	@media (max-width: 850px) {
+		.bodywrapper {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"biography"
+				"discography";
+		  }
+
+		.biography, .discography {
+			grid-column: 1;
+		  }
+		
+		.timeline {
+			flex-direction: column;
+			height: auto;
+			border-bottom: none;
+		}
+
+		.album {
+			margin: 2rem 0;
+		}
+
+		.year-label {
+			left: -3.5rem;
+			top: 45px;
+			bottom: auto;
+		}
+	}
+		
+/* Font Rules BEGIN */
+	
+	@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+		
+	h1 {
+		font-family: "Big Shoulders", sans-serif;
+		color: #000;
+		font-size: 4rem;
+		font-weight: 800;
+	}
+		
+	h2 {
+		font-family: "Big Shoulders", sans-serif;
+		color: #000;
+		font-size: 3rem;
+		font-weight: 650;
+	}
+
+	h3 {
+		font-family: "Big Shoulders", sans-serif;
+		color:;
+		font-size: 2.5rem;
+		font-weight: 500;
+	}
+		
+	h4 {
+		font-family: "Big Shoulders", sans-serif;
+		color:;
+		font-size: 2rem;
+		font-weight: 400;
+	}
+		
+	h5 {
+		font-family: "Big Shoulders", sans-serif;
+		color:;
+		font-size: 1.5rem;
+		font-weight: 300;
+	}
+		
+	p {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color: #000;
+		font-size: 1.5rem;
+		font-weight: 100;
+		line-height: 3rem;
+		text-indent: 3rem;
+	}
+
+	b {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+	}
+		
+	i {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+	}
+		
+	u {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+	}
+		
+	a {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+	}
+
+	a:hover {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+		text-decoration: underline;
+	}
+		
+	a:active {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+	}
+		
+	a:visited {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+	}
+		
+	li {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+	}
+
+	ul,ol {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		color:;
+		font-size:;
+		font-weight:;
+	}
