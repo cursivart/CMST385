@@ -14,6 +14,28 @@
 		background-attachment: fixed;
 	}
 
+	.background-image-attribution-r {
+		font-family:"IBM Plex Sans Condensed", sans-serif;
+		font-size: .5rem;
+		text-align: right;
+		color: #FFFFFF;
+		position: absolute;
+		bottom: 2rem;
+		right: 8rem;
+		z-index: 10;
+	}
+
+	.background-image-attribution-l {
+		font-family:"IBM Plex Sans Condensed", sans-serif;
+		font-size: .5rem;
+		text-align: left;
+		color: #FFFFFF;
+		position: absolute;
+		bottom: 2rem;
+		left: 3rem;
+		z-index: 10;
+	}
+
 	.dmb-logo {
 		background-image: url("../imgs/Dave-Matthew-Band_Logo-w-circle2.svg");
 		filter: drop-shadow(0rem 0rem 3rem #9aacc6);
@@ -23,6 +45,20 @@
 		width: 400px;
 		height: 400px;
 		z-index: 2;
+		opacity: 0;
+		transform: translate(-50%, -50%);
+		animation: logo-fadein 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+		transition: filter 0.5s ease-in-out;
+	}
+
+		header {
+		font-family: "Big Shoulders", sans-serif;
+		font-size: 8rem;
+		color: #FFF;
+		position: fixed;
+		top: 50vh;
+		left: 50vw;
+		z-index: 1;
 		opacity: 0;
 		transform: translate(-50%, -50%);
 		animation: logo-fadein 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -45,12 +81,34 @@
 		padding-top: 15rem;
 		top: 1000px;
 		left: 0px;
+		z-index: 5;
+	}
+
+	.news .bodywrapper {
+		background-image:
+			linear-gradient(rgba(226,244,248,0), rgba(226,244,248,1));
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		width: 100vw;
+	}
+
+	.music .bodywrapper {
+		background-image:
+			url("../imgs/pexels-padrinan-167092.png"),
+			linear-gradient(rgba(226,244,248,0), rgba(226,244,248,1));
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		width: 100vw;
+	}
+
+	.index .bodywrapper {
 		background-image: url("../imgs/Blue-ridge-mountains_transparent-bg.png");
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: top;
 		width: 100vw;
-		z-index: 5;
 	}
 
 	.timeline {
@@ -73,13 +131,14 @@
 		height: 100%;
 		background: rgba(255, 255, 255, 0.03); /* optional */
 		min-width: 0;
+		margin-bottom: 25vh;
 	}
 
 	.vertical-label {
 		writing-mode: vertical-lr;
 		text-orientation: mixed;
 		font-family: "Big Shoulders", sans-serif;
-		font-size: 1.4rem;
+		font-size: 3rem;
 		letter-spacing: 0.1em;
 		color: #FFBC0A;
 		font-weight: bold;
@@ -91,7 +150,7 @@
 
 	.timeline {
 		border-left: 2px solid #ffbc0a;
-		padding-left: 2rem;
+		padding-left: 5rem;
 		min-height: 90vh;
 	}
 
@@ -130,16 +189,19 @@
 		font-family: "IBM Plex Sans Condensed";
 		align-content: center;
 		justify-content: space-between;
-		padding-left: 5rem;
-		padding-right: 5rem;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding-left: 10rem;
+		padding-right: 10rem;
+		padding-top: 5rem;
+		padding-bottom: 2rem;
 	}
 		
 		footer img {
-		border-radius: 5rem;
-		width: 3rem;
-		height: 3rem;
+		width: 2rem;
+		height: 2rem;
+		}
+
+		footer img:hover {
+			filter: drop-shadow(0rem .1rem 1.5rem #999999);
 		}
 		
 	.content {
@@ -147,21 +209,19 @@
 	}
 
 	.year-label {
-		left: -2.5rem;
-		bottom: 0;
-		font-size: 1rem;
+		font-family: "Big Shoulders", sans-serif;
+		font-size: 3rem;
+		font-weight: 500;
 		width: 4rem;
 		text-align: right;
-		position: static; /* not absolute if vertical */
-		margin-bottom: -1.3rem;
-		margin-left: -5.5rem; /* adjust for timeline line */
+		position: static;
 		color: #ffbc0a;
 		font-size: 1rem;
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity 0.3s;
 		width: 6rem;
-		text-align: right;
+		text-align: center;
 	}
 
 /* NAVBAR BEGIN */
@@ -225,19 +285,19 @@
 
 	.album-info {
 		display: none;
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		font-size: 1.5rem;
 		position: absolute;
-		top: -140px;
-		left: 50%;
+		left: 50vw;
 		transform: translateX(-50%);
-		min-width: 220px;
-		background: #fffce4;
-		color: #222;
+		min-width: 30vw;
+		background-color: #FFFFFF;
+		color: #333333;
 		border-radius: 10px;
-		box-shadow: 0 8px 24px #1115;
-		padding: 1rem 1.1rem;
-		font-size: 1.08em;
+		box-shadow: 0rem 2rem 2rem #333333;
+		padding: 1rem 1rem;
+		font-size: 1rem;
 		z-index: 5;
-		border: 2px solid #ffbc0a;
 		pointer-events: none;
 	}
 
@@ -277,15 +337,50 @@
 			border-bottom: none;
 		}
 
-		.album {
-			margin: 2rem 0;
-		}
+  .album,
+  .album img,
+  .discography,
+  .timeline {
+    z-index: auto !important;
+    position: static !important;
+  }
+
+  .album-info {
+    position: fixed !important;
+    z-index: 9999 !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    min-width: 240px !important;
+    max-width: 90vw !important;
+    padding: 1.2rem !important;
+  }
 
 		.year-label {
 			left: -3.5rem;
 			top: 45px;
 			bottom: auto;
 		}
+		
+	.background-image-attribution-r {
+		font-family:"IBM Plex Sans Condensed", sans-serif;
+		font-size: .5rem;
+		text-align: center;
+		color: #FFFFFF;
+		position: absolute;
+		bottom: 2rem;
+		z-index: 10;
+	}
+
+	.background-image-attribution-l {
+		font-family:"IBM Plex Sans Condensed", sans-serif;
+		font-size: .5rem;
+		text-align: center;
+		color: #FFFFFF;
+		position: absolute;
+		bottom: 2rem;
+		z-index: 10;
+	}
 	}
 		
 /* Font Rules BEGIN */
@@ -329,8 +424,8 @@
 		
 	p {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color: #000;
-		font-size: 1.5rem;
+		color: #333333;
+		font-size: 1rem;
 		font-weight: 100;
 		line-height: 3rem;
 		text-indent: 3rem;
@@ -338,64 +433,69 @@
 
 	b {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color: #333333;
+		font-size: 1rem;
+		font-weight: 500;
 	}
 		
 	i {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color: #000000;
+		font-size: 1rem;
+		font-weight: 100;
+		transform: skewX(8deg);
 	}
 		
 	u {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color: #333333;
+		font-size: 1rem;
+		font-weight: 100;
+		text-decoration: underline;
 	}
 		
 	a {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color: #9AACC6;
+		font-size: 1rem;
+		font-weight: 500;
+		text-decoration: none;
 	}
 
 	a:hover {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color: #9AACC6;
+		font-size: 1rem;
+		font-weight: 500;
 		text-decoration: underline;
+		text-underline-offset: 0.2rem;
+		line-height: 1.5rem;
 	}
 		
 	a:active {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color:#333333;
+		font-size: 1rem;
+		font-weight: 500;
 	}
 		
 	a:visited {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color: #9AACC6; 
+		font-size: 1rem;
+		font-weight:800;
 	}
 		
 	li {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color: #000000;
+		font-size: 1rem;
+		font-weight: 100;
 	}
 
 	ul,ol {
 		font-family: "IBM Plex Sans Condensed", sans-serif;
-		color:;
-		font-size:;
-		font-weight:;
+		color: #333333;
+		font-size: 1rem;
+		font-weight: 100;
 	}
