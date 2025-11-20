@@ -139,7 +139,7 @@ header {
   align-items: flex-start;
   margin: 3rem 0 0 2rem;
   height: auto;
-  border-left: 2px solid #ffbc0a; /* vertical timeline line */
+  border-left: 2px solid #ffbc0a;
   border-bottom: none;
   padding-left: 5rem;
 }
@@ -150,7 +150,7 @@ header {
   flex-direction: row;
   align-items: stretch;
   height: 100%;
-  background: rgba(255, 255, 255, 0.03); /* optional */
+  background: rgba(255, 255, 255, 0.03);
   min-width: 0;
   margin-bottom: 25vh;
 }
@@ -197,11 +197,11 @@ header {
   top: -3rem;
   left: 0;
   width: 100%;
-  height: 3rem; /* or whatever looks good */
+  height: 3rem;
   background: -webkit-linear-gradient(transparent, #ffb800);
   background: -o-linear-gradient(transparent, #ffb800);
   background: linear-gradient(transparent, #ffb800);
-  pointer-events: none; /* allows clicks through to .biography content */
+  pointer-events: none;
   z-index: 1;
 }
 
