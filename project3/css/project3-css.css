@@ -4,335 +4,335 @@
 
 html,
 body {
-  height: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  background-image: linear-gradient(to bottom, #e2f4f8, #cecece);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+	background-image: linear-gradient(to bottom, #e2f4f8, #cecece);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 .background-image-attribution-c {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-size: 0.5rem;
-  text-align: center;
-  color: #ffffff;
-  position: absolute;
-  left: 50%;
-  bottom: 2rem;
-  transform: translateX(-50%);
-  z-index: 10;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	font-size: 0.5rem;
+	text-align: center;
+	color: #ffffff;
+	position: absolute;
+	left: 50%;
+	bottom: 2rem;
+	transform: translateX(-50%);
+	z-index: 10;
 }
 
 .background-image-attribution-r {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-size: 0.5rem;
-  text-align: right;
-  color: #ffffff;
-  position: absolute;
-  bottom: 2rem;
-  right: 8rem;
-  z-index: 10;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	font-size: 0.5rem;
+	text-align: right;
+	color: #ffffff;
+	position: absolute;
+	bottom: 2rem;
+	right: 8rem;
+	z-index: 10;
 }
 
 .background-image-attribution-l {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-size: 0.5rem;
-  text-align: left;
-  color: #ffffff;
-  position: absolute;
-  bottom: 2rem;
-  left: 3rem;
-  z-index: 10;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	font-size: 0.5rem;
+	text-align: left;
+	color: #ffffff;
+	position: absolute;
+	bottom: 2rem;
+	left: 3rem;
+	z-index: 10;
 }
 
 .dmb-logo {
-  background-image: url("../imgs/Dave-Matthew-Band_Logo-w-circle2.svg");
-  filter: drop-shadow(0rem 0rem 3rem #9aacc6);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  height: 400px;
-  z-index: 2;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  animation: logo-fadein 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  transition: filter 0.5s ease-in-out;
+	background-image: url("../imgs/Dave-Matthew-Band_Logo-w-circle2.svg");
+	filter: drop-shadow(0rem 0rem 3rem #9aacc6);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	z-index: 2;
+	opacity: 0;
+	transform: translate(-50%, -50%);
+	animation: logo-fadein 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	transition: filter 0.5s ease-in-out;
 }
 
 header {
-  font-family: "Big Shoulders", sans-serif;
-  font-size: 8rem;
-  color: #fff;
-  position: fixed;
-  top: 50vh;
-  left: 50vw;
-  z-index: 1;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  animation: logo-fadein 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  transition: filter 0.5s ease-in-out;
+	font-family: "Big Shoulders", sans-serif;
+	font-size: 8rem;
+	color: #fff;
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	z-index: 1;
+	opacity: 0;
+	transform: translate(-50%, -50%);
+	animation: logo-fadein 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	transition: filter 0.5s ease-in-out;
 }
 
 @keyframes logo-fadein {
-  to {
-    opacity: 1;
-  }
+	to {
+		opacity: 1;
+	}
 }
 
 .bodywrapper {
-  display: grid;
-  grid-auto-columns: 1fr 2fr;
-  gap: 1rem;
-  grid-column-areas: "discography biography";
-  position: absolute;
-  padding-top: 15rem;
-  top: 1000px;
-  left: 0px;
-  z-index: 5;
+	display: grid;
+	grid-auto-columns: 1fr 2fr;
+	gap: 1rem;
+	grid-column-areas: "discography biography";
+	position: absolute;
+	padding-top: 15rem;
+	top: 1000px;
+	left: 0px;
+	z-index: 5;
 }
 
 .news .bodywrapper {
-  display: grid;
-  grid-auto-columns: auto;
-  grid-row: auto;
-  position: absolute;
-  top: 1000px;
-  left: 0px;
-  background-image: linear-gradient(
-    rgba(226, 244, 248, 0),
-    rgba(226, 244, 248, 1)
-  );
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  width: 100vw;
+	display: grid;
+	grid-auto-columns: auto;
+	grid-row: auto;
+	position: absolute;
+	top: 1000px;
+	left: 0px;
+	background-image: linear-gradient(
+		rgba(226, 244, 248, 0),
+		rgba(226, 244, 248, 1)
+	);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	width: 100vw;
 }
 
 .music .bodywrapper {
-  background-image:
-    url("../imgs/pexels-padrinan-167092.png"),
-    linear-gradient(rgba(226, 244, 248, 0), rgba(226, 244, 248, 1));
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  width: 100vw;
+	background-image:
+		url("../imgs/pexels-padrinan-167092.png"),
+		linear-gradient(rgba(226, 244, 248, 0), rgba(226, 244, 248, 1));
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	width: 100vw;
 }
 
 .index .bodywrapper {
-  background-image: url("../imgs/Blue-ridge-mountains_transparent-bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  width: 100vw;
+	background-image: url("../imgs/Blue-ridge-mountains_transparent-bg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 100vw;
 }
 
 .timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 3rem 0 0 2rem;
-  height: auto;
-  border-left: 2px solid #ffbc0a;
-  border-bottom: none;
-  padding-left: 5rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 3rem 0 0 2rem;
+	height: auto;
+	border-left: 2px solid #ffbc0a;
+	border-bottom: none;
+	padding-left: 5rem;
 }
 
 .discography {
-  grid-column: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.03);
-  min-width: 0;
-  margin-bottom: 25vh;
+	grid-column: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.03);
+	min-width: 0;
+	margin-bottom: 25vh;
 }
 
 .vertical-label {
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  font-family: "Big Shoulders", sans-serif;
-  font-size: 3rem;
-  letter-spacing: 0.1em;
-  color: #ffbc0a;
-  font-weight: bold;
-  margin-right: 0.8rem;
-  margin-left: 3rem;
-  margin-top: 50vh;
-  align-self: flex-start;
+	writing-mode: vertical-lr;
+	text-orientation: mixed;
+	font-family: "Big Shoulders", sans-serif;
+	font-size: 3rem;
+	letter-spacing: 0.1em;
+	color: #ffbc0a;
+	font-weight: bold;
+	margin-right: 0.8rem;
+	margin-left: 3rem;
+	margin-top: 50vh;
+	align-self: flex-start;
 }
 
 .timeline {
-  border-left: 2px solid #ffbc0a;
-  padding-left: 5rem;
-  min-height: 90vh;
+	border-left: 2px solid #ffbc0a;
+	padding-left: 5rem;
+	min-height: 90vh;
 }
 
 .biography {
-  box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.2);
-  position: relative;
-  background-color: #ffb800;
-  padding-left: 2rem;
-  min-height: 90vh;
-  grid-column: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-sizing: border-box;
+	box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.2);
+	position: relative;
+	background-color: #ffb800;
+	padding-left: 2rem;
+	min-height: 90vh;
+	grid-column: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	box-sizing: border-box;
 }
 
 .biography::before {
-  box-sizing: border-box;
-  width: 100%;
-  content: "";
-  display: block;
-  position: absolute;
-  top: -3rem;
-  left: 0;
-  width: 100%;
-  height: 3rem;
-  background: -webkit-linear-gradient(transparent, #ffb800);
-  background: -o-linear-gradient(transparent, #ffb800);
-  background: linear-gradient(transparent, #ffb800);
-  pointer-events: none;
-  z-index: 1;
+	box-sizing: border-box;
+	width: 100%;
+	content: "";
+	display: block;
+	position: absolute;
+	top: -3rem;
+	left: 0;
+	width: 100%;
+	height: 3rem;
+	background: -webkit-linear-gradient(transparent, #ffb800);
+	background: -o-linear-gradient(transparent, #ffb800);
+	background: linear-gradient(transparent, #ffb800);
+	pointer-events: none;
+	z-index: 1;
 }
 
 /* NEWS BEGIN */
 
 .news-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
-  row-gap: 5rem;
-  justify-items: center;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  margin-bottom: 10rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+	row-gap: 5rem;
+	justify-items: center;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	margin-bottom: 10rem;
 }
 
 .news-cards {
-  background-color: #ffffff;
-  border-radius: 0.5rem;
-  padding: 5rem;
-  box-shadow: 0.5rem 1rem 2.5rem #999999;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  width: 100%;
-  max-width: 50rem;
-  box-sizing: border-box;
+	background-color: #ffffff;
+	border-radius: 0.5rem;
+	padding: 5rem;
+	box-shadow: 0.5rem 1rem 2.5rem #999999;
+	display: flex;
+	align-items: flex-start;
+	gap: 2rem;
+	width: 100%;
+	max-width: 50rem;
+	box-sizing: border-box;
 }
 
 .news-cards-thumbnail {
-  width: 10rem;
-  flex-shrink: 0;
+	width: 10rem;
+	flex-shrink: 0;
 }
 
 .news-cards-thumbnail img {
-  width: 100%;
-  padding-right: 2rem;
-  border-radius: 0.2rem;
+	width: 100%;
+	padding-right: 2rem;
+	border-radius: 0.2rem;
 }
 
 .news-cards-content {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-size: 1rem;
-  color: #333333;
-  font-weight: 100;
-  position: relative;
-  flex: 1 1 0;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	font-size: 1rem;
+	color: #333333;
+	font-weight: 100;
+	position: relative;
+	flex: 1 1 0;
 }
 
 .news-cards-content h4 {
-  margin: 0 0 1rem 0;
+	margin: 0 0 1rem 0;
 }
 
 .news-cards-content p {
-  margin: 0;
+	margin: 0;
 }
 
 .news-cards-date {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 1rem;
-  color: #ffffff;
-  background: #9aacc0;
-  padding: 0.25em 0.75em;
-  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
-  transform: translateY(-1.75rem);
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1rem;
+	color: #ffffff;
+	background: #9aacc0;
+	padding: 0.25em 0.75em;
+	border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+	transform: translateY(-1.75rem);
 }
 
 footer {
-  display: flex;
-  color: #ffffff;
-  font-family: "IBM Plex Sans Condensed";
-  align-content: center;
-  justify-content: space-between;
-  padding-left: 10rem;
-  padding-right: 10rem;
-  padding-top: 5rem;
-  padding-bottom: 2rem;
+	display: flex;
+	color: #ffffff;
+	font-family: "IBM Plex Sans Condensed";
+	align-content: center;
+	justify-content: space-between;
+	padding-left: 10rem;
+	padding-right: 10rem;
+	padding-top: 5rem;
+	padding-bottom: 2rem;
 }
 
 footer img {
-  width: 2rem;
-  height: 2rem;
+	width: 2rem;
+	height: 2rem;
 }
 
 footer img:hover {
-  filter: drop-shadow(0rem 0.1rem 1.5rem #999999);
+	filter: drop-shadow(0rem 0.1rem 1.5rem #999999);
 }
 
 .content {
-  padding: 2rem;
+	padding: 2rem;
 }
 
 .year-label {
-  font-family: "Big Shoulders", sans-serif;
-  font-size: 3rem;
-  font-weight: 500;
-  width: 4rem;
-  text-align: right;
-  position: static;
-  color: #ffbc0a;
-  font-size: 1rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  width: 6rem;
-  text-align: center;
+	font-family: "Big Shoulders", sans-serif;
+	font-size: 3rem;
+	font-weight: 500;
+	width: 4rem;
+	text-align: right;
+	position: static;
+	color: #ffbc0a;
+	font-size: 1rem;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s;
+	width: 6rem;
+	text-align: center;
 }
 
 /* NAVBAR BEGIN */
 
 .navbar-container {
-  display: flex;
-  gap: 5rem;
-  position: sticky;
-  top: 0px;
-  left: 0px;
-  font-family: "Big Shoulders", sans-serif;
-  size: 3rem;
-  color: #96acc9;
-  text-align: center;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  width: 100vw;
-  z-index: 10;
+	display: flex;
+	gap: 5rem;
+	position: sticky;
+	top: 0px;
+	left: 0px;
+	font-family: "Big Shoulders", sans-serif;
+	size: 3rem;
+	color: #96acc9;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	height: 2rem;
+	width: 100vw;
+	z-index: 10;
 }
 
 /* NAVBAR END
@@ -340,265 +340,265 @@ footer img:hover {
 	ALBUMS BEGIN */
 
 .album:hover .year-label {
-  opacity: 1;
-  pointer-events: auto;
+	opacity: 1;
+	pointer-events: auto;
 }
 
 .album {
-  cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.65, 0, 0.35, 1);
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  margin: 1.5rem 0;
-  position: relative;
+	cursor: pointer;
+	transition: transform 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	margin: 1.5rem 0;
+	position: relative;
 }
 
 .album img {
-  width: 100px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px #1118;
-  transition:
-    box-shadow 0.4s,
-    transform 0.4s;
-  border: 3px solid #222;
-  margin-left: 1.2rem;
+	width: 100px;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px #1118;
+	transition:
+		box-shadow 0.4s,
+		transform 0.4s;
+	border: 3px solid #222;
+	margin-left: 1.2rem;
 }
 
 .album.active img {
-  transform: scale(1.22);
-  box-shadow:
-    0 8px 30px #ffbc0a99,
-    0 2px 10px #111a;
-  border-color: #ffbc0a;
-  z-index: 2;
+	transform: scale(1.22);
+	box-shadow:
+		0 8px 30px #ffbc0a99,
+		0 2px 10px #111a;
+	border-color: #ffbc0a;
+	z-index: 2;
 }
 
 .album-info {
-  display: none;
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-size: 1.5rem;
-  position: absolute;
-  left: 50vw;
-  transform: translateX(-50%);
-  min-width: 30vw;
-  background-color: #ffffff;
-  color: #333333;
-  border-radius: 10px;
-  box-shadow: 0rem 2rem 2rem #333333;
-  padding: 1rem 1rem;
-  font-size: 1rem;
-  z-index: 5;
-  pointer-events: none;
+	display: none;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	font-size: 1.5rem;
+	position: absolute;
+	left: 50vw;
+	transform: translateX(-50%);
+	min-width: 30vw;
+	background-color: #ffffff;
+	color: #333333;
+	border-radius: 10px;
+	box-shadow: 0rem 2rem 2rem #333333;
+	padding: 1rem 1rem;
+	font-size: 1rem;
+	z-index: 5;
+	pointer-events: none;
 }
 
 .album.active .album-info {
-  display: block;
-  animation: fadein 0.6s;
+	display: block;
+	animation: fadein 0.6s;
 }
 
 @keyframes fadein {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+	from {
+		opacity: 0;
+		transform: translateX(-50%) translateY(25px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
 }
 
 /* MEDIA QUERY BEGIN */
 
 @media (max-width: 850px) {
-  .bodywrapper {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "biography"
-      "discography";
-  }
+	.bodywrapper {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"biography"
+			"discography";
+	}
 
-  .biography,
-  .discography {
-    grid-column: 1;
-  }
+	.biography,
+	.discography {
+		grid-column: 1;
+	}
 
-  .timeline {
-    flex-direction: column;
-    height: auto;
-    border-bottom: none;
-  }
+	.timeline {
+		flex-direction: column;
+		height: auto;
+		border-bottom: none;
+	}
 
-  .album,
-  .album img,
-  .discography,
-  .timeline {
-    z-index: auto !important;
-    position: static !important;
-  }
+	.album,
+	.album img,
+	.discography,
+	.timeline {
+		z-index: auto !important;
+		position: static !important;
+	}
 
-  .album-info {
-    position: fixed !important;
-    z-index: 9999 !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    min-width: 240px !important;
-    max-width: 90vw !important;
-    padding: 1.2rem !important;
-  }
+	.album-info {
+		position: fixed !important;
+		z-index: 9999 !important;
+		top: 50% !important;
+		left: 50% !important;
+		transform: translate(-50%, -50%) !important;
+		min-width: 240px !important;
+		max-width: 90vw !important;
+		padding: 1.2rem !important;
+	}
 
-  .year-label {
-    left: -3.5rem;
-    top: 45px;
-    bottom: auto;
-  }
+	.year-label {
+		left: -3.5rem;
+		top: 45px;
+		bottom: auto;
+	}
 
-  .background-image-attribution-r {
-    font-family: "IBM Plex Sans Condensed", sans-serif;
-    font-size: 0.5rem;
-    text-align: center;
-    color: #ffffff;
-    position: absolute;
-    bottom: 2rem;
-    z-index: 10;
-  }
+	.background-image-attribution-r {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		font-size: 0.5rem;
+		text-align: center;
+		color: #ffffff;
+		position: absolute;
+		bottom: 2rem;
+		z-index: 10;
+	}
 
-  .background-image-attribution-l {
-    font-family: "IBM Plex Sans Condensed", sans-serif;
-    font-size: 0.5rem;
-    text-align: center;
-    color: #ffffff;
-    position: absolute;
-    bottom: 2rem;
-    z-index: 10;
-  }
+	.background-image-attribution-l {
+		font-family: "IBM Plex Sans Condensed", sans-serif;
+		font-size: 0.5rem;
+		text-align: center;
+		color: #ffffff;
+		position: absolute;
+		bottom: 2rem;
+		z-index: 10;
+	}
 
-  .news-cards {
-    flex-direction: column;
-    padding: 1.5rem;
-    gap: 1rem;
-    max-width: 98vw;
-  }
+	.news-cards {
+		flex-direction: column;
+		padding: 1.5rem;
+		gap: 1rem;
+		max-width: 98vw;
+	}
 
-  .news-cards-thumbnail {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
+	.news-cards-thumbnail {
+		width: 100%;
+		margin-bottom: 1rem;
+	}
 }
 
 /* Font Rules BEGIN */
 
 h1 {
-  font-family: "Big Shoulders", sans-serif;
-  color: #000;
-  font-size: 4rem;
-  font-weight: 800;
+	font-family: "Big Shoulders", sans-serif;
+	color: #000;
+	font-size: 4rem;
+	font-weight: 800;
 }
 
 h2 {
-  font-family: "Big Shoulders", sans-serif;
-  color: #000;
-  font-size: 3rem;
-  font-weight: 650;
+	font-family: "Big Shoulders", sans-serif;
+	color: #000;
+	font-size: 3rem;
+	font-weight: 650;
 }
 
 h3 {
-  font-family: "Big Shoulders", sans-serif;
-  color:;
-  font-size: 2.5rem;
-  font-weight: 500;
+	font-family: "Big Shoulders", sans-serif;
+	color:;
+	font-size: 2.5rem;
+	font-weight: 500;
 }
 
 h4 {
-  font-family: "Big Shoulders", sans-serif;
-  color:;
-  font-size: 2rem;
-  font-weight: 400;
+	font-family: "Big Shoulders", sans-serif;
+	color:;
+	font-size: 2rem;
+	font-weight: 400;
 }
 
 h5 {
-  font-family: "Big Shoulders", sans-serif;
-  color:;
-  font-size: 1.5rem;
-  font-weight: 300;
+	font-family: "Big Shoulders", sans-serif;
+	color:;
+	font-size: 1.5rem;
+	font-weight: 300;
 }
 
 p {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #333333;
-  font-size: 1rem;
-  font-weight: 100;
-  line-height: 3rem;
-  text-indent: 3rem;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #333333;
+	font-size: 1rem;
+	font-weight: 100;
+	line-height: 3rem;
+	text-indent: 3rem;
 }
 
 b {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #333333;
-  font-size: 1rem;
-  font-weight: 500;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #333333;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 i {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #000000;
-  font-size: 1rem;
-  font-weight: 100;
-  transform: skewX(8deg);
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #000000;
+	font-size: 1rem;
+	font-weight: 100;
+	transform: skewX(8deg);
 }
 
 u {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #333333;
-  font-size: 1rem;
-  font-weight: 100;
-  text-decoration: underline;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #333333;
+	font-size: 1rem;
+	font-weight: 100;
+	text-decoration: underline;
 }
 
 a {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #9aacc6;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #9aacc6;
+	font-size: 1rem;
+	font-weight: 500;
+	text-decoration: none;
 }
 
 a:hover {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #9aacc6;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
-  line-height: 1.5rem;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #9aacc6;
+	font-size: 1rem;
+	font-weight: 500;
+	text-decoration: underline;
+	text-underline-offset: 0.2rem;
+	line-height: 1.5rem;
 }
 
 a:active {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #333333;
-  font-size: 1rem;
-  font-weight: 500;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #333333;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 a:visited {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #9aacc6;
-  font-size: 1rem;
-  font-weight: 800;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #9aacc6;
+	font-size: 1rem;
+	font-weight: 800;
 }
 
 li {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #000000;
-  font-size: 1rem;
-  font-weight: 100;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #000000;
+	font-size: 1rem;
+	font-weight: 100;
 }
 
 ul,
 ol {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  color: #333333;
-  font-size: 1rem;
-  font-weight: 100;
+	font-family: "IBM Plex Sans Condensed", sans-serif;
+	color: #333333;
+	font-size: 1rem;
+	font-weight: 100;
 }
