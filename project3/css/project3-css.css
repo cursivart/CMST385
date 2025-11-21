@@ -51,7 +51,7 @@ body {
 }
 
 .dmb-logo {
-	background-image: url("../imgs/Dave-Matthew-Band_Logo-w-circle2.svg");
+	background-image: url("../imgs/Dave-Matthew-Band_Logo-w-circle.svg");
 	filter: drop-shadow(0rem 0rem 3rem #9aacc6);
 	position: fixed;
 	top: 50%;
