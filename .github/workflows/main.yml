@@ -33,3 +33,5 @@ jobs:
           slot-name: 'production'
           # Publish profile secret (set this in the repository settings -> Secrets -> Actions)
           publish-profile: ${{ secrets.APPSERVICECMST385 }}
+          # Explicitly deploy the repository root (package can be a folder or zip path)
+          package: '.'
