@@ -1,39 +1,62 @@
 @charset "UTF-8";
 /* CSS Document */
 
+					/* Body Rules START */
+
 	body {
-		
+		width: 100vw;
+		margin: 0;
+	}
+
+	.body-content {
+		position: relative;
+		top: -10rem;
+		z-index: 1;
 	}
 	
+
+					/* Body Rules END */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+					/* Font Rules START */
+
+
+
+					/* Font Rules END*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+					/* Intro Banner START */
+
 	.banner-wrapper {
 		display: flex;
-		place-items: center;
+		justify-content: center;
+		align-items: center;
 		height: 100vh;
 	}
 	
 	.intro-banner-container {
 		width: 20rem;
 		height: 20rem;
-		background-image: radial-gradient(ellipse 20rem 20rem, rgba(235,235,255,.0), rgba(0,46,84,1)),
-		url("../imgs/Roses-in-the-wind copy.gif");
-		background-color: rgba(0,46,84,1);
-		background-opacity: multiply;
-		background-size: 500%;
+		background-image: url("../imgs/Self-Portrait.svg");
+		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
-		border-radius: 10rem;
+		border-radius: 20rem;
 		display: block;
 		margin: 0 auto;
-		transition: all 200ms ease-in;
+		transition: all 250ms ease-in;
 	}
 	
 	
 	.intro-banner-container:hover {
-		background-color: rgba(255,255,255,1);
+		background-image: url("../imgs/Me-in-snow.png");
 	}
 	
+	.intro-banner-container:active {
+		width: 18rem;
+		height: 18rem;
+	}
+
 	.logo {
-		width: 10rem;
+		width: 20rem;
 		display: block;
 		margin: auto;
 		align-items: center;
@@ -41,20 +64,86 @@
 	}
 	
 	.logo img {
-		width: 10rem;
+		width: 20rem;
 		display: block;
 		margin: auto;
 		align-items: center;
 		height: 100%;
-		opacity: 0;
-		transition: opacity 200ms ease-in-out, scale 1s ease-in-out;
-		transform: opacity(0), scale(1);
+		opacity: 1;
+		border: .5rem solid #3214FF;
+		border-radius: 20rem;
 	}
 	
 	.logo img:hover {
-		opacity: 1;
+		
 	}
 	
 	.logo img:active {
 		transform: scale(1.05);
 	}
+
+	a.banner-link {
+		display: block;
+	}
+				/* Intro Banner END */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				/* Navbar code START */
+
+	.navbar {
+		position: sticky;
+		top: 0;
+		left: 0;
+		height: 50px;
+		width: 100vw;
+		background-image: url("../imgs/Navbar-1@100x.svg");
+		background-size: cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+	}
+
+	.navbar-container {
+		transition: opacity 200ms, transform 200ms;
+		height: 10rem;
+	}
+
+	.navbar-container.hide {
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-100%);
+		transition-delay: .3s;
+	}
+
+	.nav-links {
+		display: flex;
+		flex: 1 1 auto;
+		margin-top: -1rem;
+		justify-content: space-evenly;
+		width: 90vw;
+	}
+
+	.nav-links a {
+		color: #FFFFFF;
+		text-decoration: none;
+		font-weight: 500;
+		padding: 0 1rem;
+		letter-spacing: 0.1rem;
+		transition: color 0.2s;
+	}
+
+	.nav-links a:hover {
+		color: #FFF000;
+	}
+		
+					/* Navbar code END */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+					/* Grid Rules START */
+
+	.portfolio-grid {
+		
+	}
+
+					/* Grid Rules END */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+					/* Footer START */
