@@ -94,19 +94,57 @@
 var mascotContainer = document.getElementById('lottieMascot');
 mascotContainer.style.width = "200px";
 mascotContainer.style.height = "100px";
-var mascotAnim = lottie.loadAnimation({
-  container: mascotContainer,
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: 'imgs/corgi-json/corgi-data.json'
-});
 
-// Stop animation when mascot reaches docking position
-mascotContainer.addEventListener('animationend', function () {
-  mascotAnim.stop();
-  this.classList.add('mascot-landing'); // Optional, for clickable etc.
-});
+// Remote fallback URLs (edit if you have a different remote location)
+const REMOTE_JSON = 'https://cmst385-umgc-cstacy3.azurewebsites.net/project4/imgs/corgi-json/corgi-data.json';
+const GITHUB_RAW = 'https://raw.githubusercontent.com/cursivart/CMST385/main/project4/imgs/corgi-json/corgi-data.json';
+
+function startLottie(path) {
+  console.log('Starting Lottie with', path);
+  var mascotAnim = lottie.loadAnimation({
+    container: mascotContainer,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: path
+  });
+
+  // Stop animation when mascot reaches docking position
+  mascotContainer.addEventListener('animationend', function () {
+    try { mascotAnim.stop(); } catch (e) {}
+    this.classList.add('mascot-landing'); // Optional, for clickable etc.
+  });
+}
+
+// Try candidates in order: local relative, your remote, then GitHub raw
+async function tryLoadAnimation() {
+  const candidates = ['./corgi-data.json', REMOTE_JSON, GITHUB_RAW];
+  for (const url of candidates) {
+    try {
+      console.log('Checking', url);
+      // Try a HEAD request first to minimize download; fall back to GET if HEAD not allowed
+      let res;
+      try {
+        res = await fetch(url, { method: 'HEAD' });
+      } catch (headErr) {
+        // Some servers don't accept HEAD; try GET but don't read body
+        res = await fetch(url, { method: 'GET' });
+      }
+      if (res && res.ok) {
+        startLottie(url);
+        return;
+      }
+      console.warn('Unavailable:', url, res && res.status);
+    } catch (err) {
+      console.warn('Error checking', url, err && err.message);
+    }
+  }
+  // If all candidates failed, still try relative (will show errors in console)
+  console.error('All candidates failed; attempting relative fallback');
+  startLottie('./corgi-data.json');
+}
+
+tryLoadAnimation();
   </script>
 </body>
 </html>
