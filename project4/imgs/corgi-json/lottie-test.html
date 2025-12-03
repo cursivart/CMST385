@@ -2,67 +2,65 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Mascot draws a line right-to-left</title>
+  <title>Mascot draws trailing line (static trail to edge)</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <style>
     html, body {
-      margin: 0; padding: 0; overflow-x: hidden; background: #000022;
+      margin: 0; padding: 0; overflow-x: hidden; background: #ffffff;
       height: 100vh; min-height: 100vh; width: 100vw;
     }
     body {
       min-width: 200px;
+      opacity: 0;
+      animation: fadein 1s ease-out forwards;
     }
+    @keyframes fadein { to { opacity: 1; } }
     .mascot-bar-wrapper {
       position: fixed;
       top: 2rem;
       left: 0;
-      width: 100vw;         
-      height: 12rem; /* enough to fit mascot and bar */
+      width: 100vw;
+      height: 120px;
       z-index: 10;
       pointer-events: none;
     }
-    .magic-bar {
+    .permanent-trail {
       position: absolute;
-      top: 90px;
+      top: 100px;
       right: 0;
       height: 2px;
       background: #4ee0c8;
       border-radius: 1px;
       width: 0;
-      min-width: 200px;
-      animation: bar-grow-left 2.5s linear forwards;
       z-index: 2;
+      animation: trail-grow 2.5s ease-out forwards;
+      animation-delay: 1s;
     }
-    @keyframes bar-grow-left {
-      0%   { width: 0; }
-      8%   { width: 200px; }
-      100% { width: 100vw; }
+    @keyframes trail-grow {
+      from { width: 0; }
+      to   { width: 100vw; }
     }
     .mascot-fly {
       position: absolute;
       top: 0;
-      right: 0; 
+      right: -200px;
       width: 200px !important;
       height: 100px !important;
+      display: block;
       z-index: 3;
-      animation: mascot-left 2.5s linear forwards;
+      animation: mascot-left 2.5s ease-out forwards;
+      animation-delay: 1s;
       pointer-events: none;
       cursor: default;
-      transition: cursor 0.2s;
     }
     .mascot-fly svg {
-      width: 100% !important;
-      height: 100% !important;
-      display: block;
+      width: 100% !important; height: 100% !important; display: block;
     }
     @keyframes mascot-left {
-      0% { right: 0; }
-      100% { right: calc(100vw - 200px); }
+      from { right: -200px; }
+      to   { right: calc(100vw - 200px); }
     }
-    .mascot-landing {
-      pointer-events: auto;
-      cursor: pointer;
-    }
+    .mascot-landing { pointer-events: auto; cursor: pointer; }
     .lottie-container {
       min-width: 200px;
       width: 200px;
@@ -72,30 +70,43 @@
       pointer-events: none;
     }
     @media (max-width: 500px) {
-      .mascot-bar-wrapper { height: 12rem; }
-      .magic-bar { top: 100px; min-width: 100px; }
-      .mascot-fly { width: 100px !important; height: 50px !important; }
+      .mascot-bar-wrapper { height: 60px; }
+      .permanent-trail { top: 50px; }
+      .mascot-fly { width: 100px !important; height: 50px !important; right: -100px; }
+      @keyframes mascot-left {
+        from { right: -100px; }
+        to   { right: calc(100vw - 100px); }
+      }
+      @keyframes trail-grow {
+        from { width: 0; }
+        to   { width: 100vw; }
+      }
     }
   </style>
 </head>
 <body>
   <div class="mascot-bar-wrapper">
-    <div class="magic-bar"></div>
+    <div class="permanent-trail"></div>
     <div class="mascot-fly" id="lottieMascot"></div>
   </div>
   <div class="lottie-container"></div>
   <script>
-    // Lottie mascot
-    var mascotContainer = document.getElementById('lottieMascot');
-    mascotContainer.style.width = "200px";
-    mascotContainer.style.height = "100px";
-    var mascotAnim = lottie.loadAnimation({
-      container: mascotContainer,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/Users/christianstacy/Documents/GitHub/CMST385/project4/imgs/corgi-json/corgi-data.json'
-    });
+var mascotContainer = document.getElementById('lottieMascot');
+mascotContainer.style.width = "200px";
+mascotContainer.style.height = "100px";
+var mascotAnim = lottie.loadAnimation({
+  container: mascotContainer,
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: '/Users/christianstacy/Documents/GitHub/CMST385/project4/imgs/corgi-json/corgi-data.json'
+});
+
+// Stop animation when mascot reaches docking position
+mascotContainer.addEventListener('animationend', function () {
+  mascotAnim.stop();
+  this.classList.add('mascot-landing'); // Optional, for clickable etc.
+});
   </script>
 </body>
 </html>
