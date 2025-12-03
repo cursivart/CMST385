@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>test file for corgi animation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+		overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+	max-width: 100vw;
+      background-color: #AE6B;
+      flex-direction: column;
+    }
+
+    .lottie-container {
+      width: 500px;
+      height: 500px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+		animation: slide-in-left 10s linear;
+    }
+    @keyframes slide-in-left {
+      from {
+        transform: translateX(100vw);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+	  
+    .enter {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #FFFFFF;
+      padding: 5rem;
+		margin-top: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+		font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    }
+	  
+    .enter:hover {
+      color: #FFF000;
+    }
+  </style>
+</head>
+<body>
+  <div id="lottie-container" class="lottie-container">
+    <a class="enter" href="#">Enter</a>
+  </div>
+  <script>
+    var animation = lottie.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/Users/christianstacy/Documents/GitHub/CMST385/project4/imgs/corgi-json/corgi-data.json'
+    });
+  </script>
+</body>
+</html>
