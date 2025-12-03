@@ -121,16 +121,13 @@
       cursor: default;
     }
     /* Static mascot for mobile */
-    .mascot-static {
-      display: none;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 225px;
-      height: 150px;
-      pointer-events: auto;
-      cursor: pointer;
-    }
+.mascot-static {
+  display: none;
+  width: 225px;
+  height: 150px;
+  pointer-events: auto;
+  cursor: pointer;
+}
 
     @keyframes mascot-left {
       from { right: -200px; }
@@ -183,17 +180,21 @@
         height: 145px;
         position: fixed;
       }
-      .mascot-fly { display: none !important; }
-      .mascot-static {
-        display: block !important;
-        width: 210px;
-        height: 125px;
-        right: 0;
-        bottom: 0;
-        position: absolute;
-        pointer-events: auto;
-        cursor: pointer;
-      }
+		
+      .mascot-fly { display: none !important; 
+		}
+		
+  .mascot-static {
+    display: block !important;
+    width: 210px;
+    height: 125px;
+    position: fixed;      /* changed from absolute!! */
+    right: 8vw;           /* move left from the right edge */
+    bottom: 12vh;         /* move up from the bottom */
+    pointer-events: auto;
+    cursor: pointer;
+  }
+		
       @keyframes mascot-left {
         from { right: -110px; }
         to   { right: calc(100vw - 100px); }
@@ -207,12 +208,36 @@
         padding: 1.1rem 1.2rem 1.1rem 1.1rem;
       }
     }
+	  
     @media (max-width: 500px) {
-      .mascot-bar-wrapper { height: 100px; }
-      .mascot-static { width: 140px; height: 80px;}
-      .footer-bar { height: calc(5vh + 15px); padding-left: 1vw; padding-right: 1vw; font-size: 0.92rem;}
-      .nav-lightbox-close { top: 13px; right: 14px; font-size: 1.4rem;}
-      .bone-link { padding: 0.9rem 0.8rem 0.9rem 0.8rem; font-size: 9px;}
+      .mascot-bar-wrapper { 
+		  height: 100px; 
+		}
+        
+		.mascot-static {
+    		width: 140px; 
+			height: 80px;
+    		right: 10vw; 
+			bottom: 12vh;
+  }
+		
+      .footer-bar { 
+		  height: calc(5vh + 15px); 
+		  padding-left: 1vw; 
+		  padding-right: 1vw; 
+		  font-size: 0.92rem;
+		}
+		
+      .nav-lightbox-close { 
+		  top: 13px; 
+		  right: 14px; 
+		  font-size: 1.4rem;
+		}
+		
+      .bone-link { 
+		  padding: 0.9rem 0.8rem 0.9rem 0.8rem; 
+		  font-size: 9px;
+		}
     }
   </style>
 </head>
@@ -235,7 +260,7 @@
   </div>
   <div class="mascot-bar-wrapper">
     <!-- Static mascot for mobile -->
-    <img src="img.png" alt="Mascot" class="mascot-static" id="mascotStaticImg"/>
+    <img src="../corgi-logo@100x.svg" alt="Mascot" class="mascot-static" id="mascotStaticImg"/>
     <!-- Lottie only shows on desktop/tablet -->
     <div class="mascot-fly" id="lottieMascot"></div>
   </div>
