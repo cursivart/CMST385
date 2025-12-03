@@ -2,12 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Mascot draws trailing line (static trail to edge)</title>
+  <title>Mascot with static yellow bottom, bonenav left vertical, larger mobile mascot</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <style>
     html, body {
-      margin: 0; padding: 0; overflow-x: hidden; background: #ffffff;
+      margin: 0; padding: 0; overflow-x: hidden;
       height: 100vh; min-height: 100vh; width: 100vw;
+      background: #F26052;
     }
     body {
       min-width: 200px;
@@ -15,136 +16,290 @@
       animation: fadein 1s ease-out forwards;
     }
     @keyframes fadein { to { opacity: 1; } }
+
+    /* ---- BONENAV (LEFT SIDEBAR) ---- */
+    .bonenav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 15vw;
+      min-width: 125px;
+      height: 80vh;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      padding-top: 5vh;
+      background: none;
+      box-sizing: border-box;
+      pointer-events: auto;
+    }
+    .bone-link {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1rem;
+      color: #0D0D0D;
+      background: none;
+      text-decoration: none;
+      display: flex;
+      padding: 1.5rem;
+      border-radius: 0.5em;
+      transition: background 0.15s, color 0.15s, transform 0.15s;
+      background-repeat: no-repeat;
+      background-position: center left;
+      background-size: 100% 100%;
+    }
+
+    .navbarbg-1 {
+      background-image: url("../Navbone-2@100x.svg");
+      background-position: center center;
+      background-size: contain;
+      transform: rotate(5deg);
+    }
+
+    .navbarbg-2 {
+      background-image: url("../Navbone-1@100x.svg");
+      background-position: center;
+      transform: rotate(-5deg);
+    }
+
+    .navbarbg-3 {
+      background-image: url("../Navbone-3@100x.svg");
+      background-position: center;
+      transform: rotate(5deg);
+    }
+
+    .bone-link:hover, .bone-link:focus {
+      color: #FFFFF4;
+      transform: scale(1.09);
+      outline: none;
+      filter: brightness(0.95) drop-shadow(0px 2px 5px #21212133);
+    }
+
+    /* ---- Footer ---- */
+    .footer-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: calc(5vh + 25px);
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1vw;
+      z-index: 3;
+      border-top: 4px solid #EBFC72;
+      box-sizing: border-box;
+      padding-left: 12vw;
+      padding-right: 12vw;
+      pointer-events: auto;
+    }
+
     .mascot-bar-wrapper {
       position: fixed;
-      top: 2rem;
       left: 0;
       width: 100vw;
-      height: 120px;
-      z-index: 10;
+      height: 125px;
+      bottom: 5vh;
+      z-index: 999 !important;
       pointer-events: none;
-    }
-    .permanent-trail {
-      position: absolute;
-      top: 90px;
-      right: 0;
-      height: 2px;
-      background: #4ee0c8;
-      border-radius: 1px;
-      width: 0;
-      z-index: 2;
-      animation: trail-grow 2.5s ease-out forwards;
-      animation-delay: 1s;
-    }
-    @keyframes trail-grow {
-      from { width: 0; }
-      to   { width: 100vw; }
     }
     .mascot-fly {
       position: absolute;
-      top: 0;
-      right: -200px;
-      width: 200px !important;
-      height: 100px !important;
+      top: -20px;
+      right: -225px;
+      width: 225px !important;
+      height: 150px !important;
       display: block;
-      z-index: 3;
+      z-index: 999 !important;
       animation: mascot-left 2.5s ease-out forwards;
       animation-delay: 1s;
       pointer-events: none;
       cursor: default;
     }
-    .mascot-fly svg {
-      width: 100% !important; height: 100% !important; display: block;
+    /* Static mascot for mobile */
+    .mascot-static {
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 225px;
+      height: 150px;
+      pointer-events: auto;
+      cursor: pointer;
     }
+
     @keyframes mascot-left {
       from { right: -200px; }
       to   { right: calc(100vw - 200px); }
     }
     .mascot-landing { pointer-events: auto; cursor: pointer; }
-    .lottie-container {
-      min-width: 200px;
-      width: 200px;
-      max-width: 600px;
-      margin: 8rem auto 0 auto;
-      height: 8rem;
-      pointer-events: none;
+
+    /* Lightbox overlay hidden by default */
+    .nav-lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(250,251,255,0.93);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
-    @media (max-width: 500px) {
-      .mascot-bar-wrapper { height: 60px; }
-      .permanent-trail { top: 50px; }
-      .mascot-fly { width: 100px !important; height: 50px !important; right: -100px; }
+    .nav-lightbox-overlay.active {
+      display: flex;
+    }
+    .nav-lightbox-close {
+      position: absolute;
+      top: 22px;
+      right: 28px;
+      font-size: 2rem;
+      color: #222;
+      cursor: pointer;
+      opacity: 0.5;
+      font-weight: 900;
+      background: none;
+      border: none;
+    }
+    .bonenav-lightbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 2vh;
+    }
+
+    @media (max-width: 700px) {
+      .bonenav { display: none !important; }
+      .nav-lightbox-overlay { display: none; }
+      .nav-lightbox-overlay.active { display: flex; }
+      .mascot-bar-wrapper {
+        left: 0;
+        width: 100vw;
+        bottom: 5vh;
+        height: 145px;
+        position: fixed;
+      }
+      .mascot-fly { display: none !important; }
+      .mascot-static {
+        display: block !important;
+        width: 210px;
+        height: 125px;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        pointer-events: auto;
+        cursor: pointer;
+      }
       @keyframes mascot-left {
-        from { right: -100px; }
+        from { right: -110px; }
         to   { right: calc(100vw - 100px); }
       }
-      @keyframes trail-grow {
-        from { width: 0; }
-        to   { width: 100vw; }
+      .footer-bar {
+        height: 45px;
+        font-size: 1rem;
       }
+      .bone-link {
+        font-size: 11px;
+        padding: 1.1rem 1.2rem 1.1rem 1.1rem;
+      }
+    }
+    @media (max-width: 500px) {
+      .mascot-bar-wrapper { height: 100px; }
+      .mascot-static { width: 140px; height: 80px;}
+      .footer-bar { height: calc(5vh + 15px); padding-left: 1vw; padding-right: 1vw; font-size: 0.92rem;}
+      .nav-lightbox-close { top: 13px; right: 14px; font-size: 1.4rem;}
+      .bone-link { padding: 0.9rem 0.8rem 0.9rem 0.8rem; font-size: 9px;}
     }
   </style>
 </head>
 <body>
+  <nav class="bonenav">
+    <a class="bone-link navbarbg-1" href="#">about</a>
+    <a class="bone-link navbarbg-2" href="#">portfolio</a>
+    <a class="bone-link navbarbg-3" href="#">spotlight</a>
+    <a class="bone-link navbarbg-1" href="#">contact</a>
+  </nav>
+  <!-- Lightbox nav for mobile, hidden by default -->
+  <div class="nav-lightbox-overlay" id="nav-overlay">
+    <button class="nav-lightbox-close" id="nav-close" aria-label="Close navigation">&times;</button>
+    <nav class="bonenav-lightbox">
+      <a class="bone-link navbarbg-1" href="#">about</a>
+      <a class="bone-link navbarbg-2" href="#">portfolio</a>
+      <a class="bone-link navbarbg-3" href="#">spotlight</a>
+      <a class="bone-link navbarbg-1" href="#">contact</a>
+    </nav>
+  </div>
   <div class="mascot-bar-wrapper">
-    <div class="permanent-trail"></div>
+    <!-- Static mascot for mobile -->
+    <img src="img.png" alt="Mascot" class="mascot-static" id="mascotStaticImg"/>
+    <!-- Lottie only shows on desktop/tablet -->
     <div class="mascot-fly" id="lottieMascot"></div>
   </div>
-  <div class="lottie-container"></div>
+  <footer class="footer-bar">
+    <!-- Keep or remove footer links as desired, now nav is on the left -->
+  </footer>
   <script>
-var mascotContainer = document.getElementById('lottieMascot');
-mascotContainer.style.width = "200px";
-mascotContainer.style.height = "100px";
+    var mascotContainer = document.getElementById('lottieMascot');
+    mascotContainer.style.width = "200px";
+    mascotContainer.style.height = "100px";
+    const REMOTE_JSON = 'https://cmst385-umgc-cstacy3.azurewebsites.net/project4/imgs/corgi-json/corgi-data.json';
+    const GITHUB_RAW = 'https://raw.githubusercontent.com/cursivart/CMST385/main/project4/imgs/corgi-json/corgi-data.json';
 
-// Remote fallback URLs (edit if you have a different remote location)
-const REMOTE_JSON = 'https://cmst385-umgc-cstacy3.azurewebsites.net/project4/imgs/corgi-json/corgi-data.json';
-const GITHUB_RAW = 'https://raw.githubusercontent.com/cursivart/CMST385/main/project4/imgs/corgi-json/corgi-data.json';
+    function startLottie(path) {
+      var mascotAnim = lottie.loadAnimation({
+        container: mascotContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: path
+      });
 
-function startLottie(path) {
-  console.log('Starting Lottie with', path);
-  var mascotAnim = lottie.loadAnimation({
-    container: mascotContainer,
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: path
-  });
-
-  // Stop animation when mascot reaches docking position
-  mascotContainer.addEventListener('animationend', function () {
-    try { mascotAnim.stop(); } catch (e) {}
-    this.classList.add('mascot-landing'); // Optional, for clickable etc.
-  });
-}
-
-// Try candidates in order: local relative, your remote, then GitHub raw
-async function tryLoadAnimation() {
-  const candidates = ['./corgi-data.json', REMOTE_JSON, GITHUB_RAW];
-  for (const url of candidates) {
-    try {
-      console.log('Checking', url);
-      // Try a HEAD request first to minimize download; fall back to GET if HEAD not allowed
-      let res;
-      try {
-        res = await fetch(url, { method: 'HEAD' });
-      } catch (headErr) {
-        // Some servers don't accept HEAD; try GET but don't read body
-        res = await fetch(url, { method: 'GET' });
-      }
-      if (res && res.ok) {
-        startLottie(url);
-        return;
-      }
-      console.warn('Unavailable:', url, res && res.status);
-    } catch (err) {
-      console.warn('Error checking', url, err && err.message);
+      mascotContainer.addEventListener('animationend', function () {
+        try { mascotAnim.stop(); } catch (e) {}
+        this.classList.add('mascot-landing');
+      });
     }
-  }
-  // If all candidates failed, still try relative (will show errors in console)
-  console.error('All candidates failed; attempting relative fallback');
-  startLottie('./corgi-data.json');
-}
+    async function tryLoadAnimation() {
+      const candidates = ['./corgi-data.json', REMOTE_JSON, GITHUB_RAW];
+      for (const url of candidates) {
+        try {
+          let res;
+          try { res = await fetch(url, { method: 'HEAD' }); }
+          catch { res = await fetch(url, { method: 'GET' }); }
+          if (res && res.ok) { startLottie(url); return; }
+        } catch (err) {}
+      }
+      startLottie('./corgi-data.json');
+    }
+    tryLoadAnimation();
 
-tryLoadAnimation();
+    // Mobile nav overlay logic for mascot static image
+    document.addEventListener('DOMContentLoaded', function() {
+      var overlay = document.getElementById('nav-overlay');
+      var closeBtn = document.getElementById('nav-close');
+      closeBtn.onclick = function() { overlay.classList.remove('active'); };
+      overlay.onclick = function(e) {
+        if (e.target === overlay) overlay.classList.remove('active');
+      };
+      var navLinks = overlay.querySelectorAll('.bone-link');
+      navLinks.forEach(function(link) {
+        link.onclick = function() { overlay.classList.remove('active'); };
+      });
+
+      // Mobile mascot image opens nav overlay
+      var mascotStatic = document.getElementById('mascotStaticImg');
+      if (mascotStatic) {
+        mascotStatic.addEventListener('click', function(e) {
+          if (window.matchMedia("(max-width: 700px)").matches) {
+            overlay.classList.add('active');
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>
