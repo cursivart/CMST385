@@ -1,0 +1,12 @@
+{
+  "name": "cmst385",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "format:project4": "prettier --write \"project4/**/*.{html,css,js}\"",
+    "format:check": "prettier --check \"project4/**/*.{html,css,js}\""
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
