@@ -2,25 +2,32 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Mascot with static yellow bottom, bonenav left vertical, larger mobile mascot</title>
+  <title>Mascot slides/flips/scales in from left above navbar</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <style>
     html, body {
-      margin: 0; padding: 0; overflow-x: hidden;
-      height: 100vh; min-height: 100vh; width: 100vw;
-      background: #F26052;
+      margin: 0; 
+      padding: 0;
+      overflow-x: hidden;
+      height: 100vh;
+      min-height: 100vh;
+      width: 100vw;
+      background: #E1F2A2;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
     }
     body {
       min-width: 200px;
       opacity: 0;
       animation: fadein 1s ease-out forwards;
     }
-    @keyframes fadein { to { opacity: 1; } }
+    @keyframes fadein {
+      to { opacity: 1; }
+    }
 
     /* ---- BONENAV (LEFT SIDEBAR) ---- */
     .bonenav {
       position: fixed;
-      top: 0;
+      top: 120px; /* move down for mascot */
       left: 0;
       width: 15vw;
       min-width: 125px;
@@ -45,37 +52,60 @@
       text-decoration: none;
       display: flex;
       padding: 1.5rem;
-      border-radius: 0.5em;
       transition: background 0.15s, color 0.15s, transform 0.15s;
       background-repeat: no-repeat;
       background-position: center left;
-      background-size: 100% 100%;
-    }
-
-    .navbarbg-1 {
-      background-image: url("../Navbone-2@100x.svg");
-      background-position: center center;
       background-size: contain;
-      transform: rotate(5deg);
     }
-
-    .navbarbg-2 {
-      background-image: url("../Navbone-1@100x.svg");
-      background-position: center;
-      transform: rotate(-5deg);
-    }
-
-    .navbarbg-3 {
-      background-image: url("../Navbone-3@100x.svg");
-      background-position: center;
-      transform: rotate(5deg);
-    }
-
+    .navbarbg-1 { background-image: url("../Navbone-2@100x.svg"); background-position: center center; background-size: contain; transform: rotate(5deg);}
+    .navbarbg-2 { background-image: url("../Navbone-1@100x.svg"); background-position: center; transform: rotate(-5deg);}
+    .navbarbg-3 { background-image: url("../Navbone-3@100x.svg"); background-position: center; transform: rotate(5deg);}
     .bone-link:hover, .bone-link:focus {
       color: #FFFFF4;
       transform: scale(1.09);
       outline: none;
       filter: brightness(0.95) drop-shadow(0px 2px 5px #21212133);
+    }
+
+    /* ---- Mascot animation slides/flips/scales in from left, above navbar ---- */
+    .mascot-anim-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 120px;
+      z-index: 100;
+      pointer-events: none;
+      display: flex;
+      align-items: flex-start;
+    }
+    .mascot-walk {
+      position: absolute;
+      top: 10px;
+      left: -120px; /* start hidden to the left */
+      width: 100px;
+      height: 100px;
+      z-index: 101;
+      animation: mascot-slide-in 2s ease-out forwards;
+      animation-delay: 0.7s;
+      pointer-events: none;
+      /* --- Flip, scale (change scale as needed) --- */
+      transform: scaleX(-1) scale(1.07);
+    }
+    @keyframes mascot-slide-in {
+      from { left: -120px; opacity: 0.2; }
+      to   { left: 5vw; opacity: 1; }
+    }
+
+    .mascot-static {
+      display: none;
+      width: 100px;
+      height: 100px;
+      pointer-events: auto;
+      cursor: pointer;
+      position: static;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* ---- Footer ---- */
@@ -84,58 +114,36 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: calc(5vh + 25px);
+      height: 5vh;
       width: 100vw;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 1vw;
       z-index: 3;
-      border-top: 4px solid #EBFC72;
+      background-color: #F26052;
       box-sizing: border-box;
       padding-left: 12vw;
       padding-right: 12vw;
       pointer-events: auto;
     }
 
-    .mascot-bar-wrapper {
-      position: fixed;
-      left: 0;
-      width: 100vw;
-      height: 125px;
-      bottom: 5vh;
-      z-index: 999 !important;
-      pointer-events: none;
-    }
-    .mascot-fly {
+    /* Content area to right of nav */
+    .content-container {
       position: absolute;
-      top: -20px;
-      right: -225px;
-      width: 225px !important;
-      height: 150px !important;
-      display: block;
-      z-index: 999 !important;
-      animation: mascot-left 2.5s ease-out forwards;
-      animation-delay: 1s;
-      pointer-events: none;
-      cursor: default;
+      top: 0px;
+      right: 0px;
+      width: 80vw;
+      height: 85vh;
+      margin-left: 30vw;
+      overflow-y: auto;
+      overflow-x: hidden;
+      word-break: break-word;
+      white-space: normal;
+      z-index: 10;
     }
-    /* Static mascot for mobile */
-.mascot-static {
-  display: none;
-  width: 225px;
-  height: 150px;
-  pointer-events: auto;
-  cursor: pointer;
-}
 
-    @keyframes mascot-left {
-      from { right: -200px; }
-      to   { right: calc(100vw - 200px); }
-    }
-    .mascot-landing { pointer-events: auto; cursor: pointer; }
-
-    /* Lightbox overlay hidden by default */
+    /* Lightbox overlay */
     .nav-lightbox-overlay {
       display: none;
       position: fixed;
@@ -144,10 +152,9 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      z-index: 1000;
     }
-    .nav-lightbox-overlay.active {
-      display: flex;
-    }
+    .nav-lightbox-overlay.active { display: flex; }
     .nav-lightbox-close {
       position: absolute;
       top: 22px;
@@ -173,81 +180,37 @@
       .bonenav { display: none !important; }
       .nav-lightbox-overlay { display: none; }
       .nav-lightbox-overlay.active { display: flex; }
-      .mascot-bar-wrapper {
-        left: 0;
-        width: 100vw;
-        bottom: 5vh;
-        height: 145px;
-        position: fixed;
+      .mascot-anim-container { height: 0 !important; }
+      .mascot-walk { display: none !important; }
+      .mascot-static {
+        display: block !important;
+        width: 90px; height: 90px;
+        position: static;
+        margin: 16px auto 0 auto;
       }
-		
-      .mascot-fly { display: none !important; 
-		}
-		
-  .mascot-static {
-    display: block !important;
-    width: 210px;
-    height: 125px;
-    position: fixed;      /* changed from absolute!! */
-    right: 8vw;           /* move left from the right edge */
-    bottom: 12vh;         /* move up from the bottom */
-    pointer-events: auto;
-    cursor: pointer;
-  }
-		
-      @keyframes mascot-left {
-        from { right: -110px; }
-        to   { right: calc(100vw - 100px); }
-      }
-      .footer-bar {
-        height: 45px;
-        font-size: 1rem;
-      }
-      .bone-link {
-        font-size: 11px;
-        padding: 1.1rem 1.2rem 1.1rem 1.1rem;
-      }
+      .footer-bar { height: 15vh; font-size: 1rem; }
+      .content-container { width: 100vw; left: 0; }
     }
-	  
     @media (max-width: 500px) {
-      .mascot-bar-wrapper { 
-		  height: 100px; 
-		}
-        
-		.mascot-static {
-    		width: 140px; 
-			height: 80px;
-    		right: 10vw; 
-			bottom: 12vh;
-  }
-		
-      .footer-bar { 
-		  height: calc(5vh + 15px); 
-		  padding-left: 1vw; 
-		  padding-right: 1vw; 
-		  font-size: 0.92rem;
-		}
-		
-      .nav-lightbox-close { 
-		  top: 13px; 
-		  right: 14px; 
-		  font-size: 1.4rem;
-		}
-		
-      .bone-link { 
-		  padding: 0.9rem 0.8rem 0.9rem 0.8rem; 
-		  font-size: 9px;
-		}
+      .content-container { padding-left: 5px; padding-right: 5px; }
+      .mascot-static { width: 60px; height: 60px; margin: 10px auto; }
+      .footer-bar { height: 15vh;}
     }
   </style>
 </head>
 <body>
+  <!-- Mascot animation slides, flips, and scales in from left, above nav, inside nav container -->
+  <div class="mascot-anim-container">
+    <div class="mascot-walk" id="lottieMascot"></div>
+  </div>
+
   <nav class="bonenav">
     <a class="bone-link navbarbg-1" href="#">about</a>
     <a class="bone-link navbarbg-2" href="#">portfolio</a>
     <a class="bone-link navbarbg-3" href="#">spotlight</a>
     <a class="bone-link navbarbg-1" href="#">contact</a>
   </nav>
+
   <!-- Lightbox nav for mobile, hidden by default -->
   <div class="nav-lightbox-overlay" id="nav-overlay">
     <button class="nav-lightbox-close" id="nav-close" aria-label="Close navigation">&times;</button>
@@ -258,18 +221,23 @@
       <a class="bone-link navbarbg-1" href="#">contact</a>
     </nav>
   </div>
-  <div class="mascot-bar-wrapper">
-    <!-- Static mascot for mobile -->
-    <img src="../corgi-logo@100x.svg" alt="Mascot" class="mascot-static" id="mascotStaticImg"/>
-    <!-- Lottie only shows on desktop/tablet -->
-    <div class="mascot-fly" id="lottieMascot"></div>
+  
+  <div class="content-container">
+    <img src="https://www.vice.com/wp-content/uploads/sites/2/2020/07/1595325741061-Untitled-design-5.png?resize=1024,576">
+    <img src="https://www.vice.com/wp-content/uploads/sites/2/2020/07/1595325741061-Untitled-design-5.png?resize=1024,576">
+    <img src="https://www.vice.com/wp-content/uploads/sites/2/2020/07/1595325741061-Untitled-design-5.png?resize=1024,576">
+    <img src="https://www.vice.com/wp-content/uploads/sites/2/2020/07/1595325741061-Untitled-design-5.png?resize=1024,576">
+    <img src="https://www.vice.com/wp-content/uploads/sites/2/2020/07/1595325741061-Untitled-design-5.png?resize=1024,576">
+    <img src="https://www.vice.com/wp-content/uploads/sites/2/2020/07/1595325741061-Untitled-design-5.png?resize=1024,576">
+    <img src="https://www.vice.com/wp-content/uploads/sites/2/2020/07/1595325741061-Untitled-design-5.png?resize=1024,576">
   </div>
+
   <footer class="footer-bar">
-    <!-- Keep or remove footer links as desired, now nav is on the left -->
+    <!-- Footer links as desired -->
   </footer>
   <script>
     var mascotContainer = document.getElementById('lottieMascot');
-    mascotContainer.style.width = "200px";
+    mascotContainer.style.width = "100px";
     mascotContainer.style.height = "100px";
     const REMOTE_JSON = 'https://cmst385-umgc-cstacy3.azurewebsites.net/project4/imgs/corgi-json/corgi-data.json';
     const GITHUB_RAW = 'https://raw.githubusercontent.com/cursivart/CMST385/main/project4/imgs/corgi-json/corgi-data.json';
@@ -281,11 +249,6 @@
         loop: true,
         autoplay: true,
         path: path
-      });
-
-      mascotContainer.addEventListener('animationend', function () {
-        try { mascotAnim.stop(); } catch (e) {}
-        this.classList.add('mascot-landing');
       });
     }
     async function tryLoadAnimation() {
@@ -302,7 +265,6 @@
     }
     tryLoadAnimation();
 
-    // Mobile nav overlay logic for mascot static image
     document.addEventListener('DOMContentLoaded', function() {
       var overlay = document.getElementById('nav-overlay');
       var closeBtn = document.getElementById('nav-close');
@@ -314,16 +276,6 @@
       navLinks.forEach(function(link) {
         link.onclick = function() { overlay.classList.remove('active'); };
       });
-
-      // Mobile mascot image opens nav overlay
-      var mascotStatic = document.getElementById('mascotStaticImg');
-      if (mascotStatic) {
-        mascotStatic.addEventListener('click', function(e) {
-          if (window.matchMedia("(max-width: 700px)").matches) {
-            overlay.classList.add('active');
-          }
-        });
-      }
     });
   </script>
 </body>
