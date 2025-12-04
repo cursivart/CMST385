@@ -33,9 +33,7 @@ body {
 	margin: auto;
 	position: relative;
 	top: 50vh;
-	/* include hue-rotate at 0deg so the browser can interpolate the angle smoothly */
 	filter: hue-rotate(0deg) drop-shadow(0rem 0rem 10rem #ebfc72);
-	/* longer duration and easing for a gradual color shift */
 	transition: filter 600ms ease;
 }
 
@@ -44,7 +42,6 @@ body {
 }
 /* =================== FONT RULES ======================= */
 
-/* Use Genos everywhere as base already set in html, body */
 
 h1,
 h2,
@@ -161,7 +158,6 @@ i {
 	font-style: italic;
 }
 
-/* Utility classes */
 .font-genos {
 	font-family: 'Genos', sans-serif !important;
 }
