@@ -1,0 +1,9 @@
+# Ignore archives and large binary files
+*.zip
+*.ai
+
+# Node modules
+node_modules
+
+# VS Code settings
+.vscode
