@@ -2,28 +2,70 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Portfolio | Christian Stacy</title>
-<link href="css/project4.css" rel="stylesheet" type="text/css">
+<title>portfolio</title>
+<link href="css/project4-1.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<div class="navbar-container">
-	<div class="navbar">
-		<nav class="nav-links">
-			<a href="#design">Design</a>
-			<a href="#siteplanning">Site Planning</a>
-			<a href="#socials">Socials</a>
-	  	</nav>
-	</div>
-</div>
+	<nav class="nav">
+  <div class="icon"></div>
+  <div class="icon-spacer"></div>
+  <a class="nav-link navbarbg-1" href="#">about</a>
+  <a class="nav-link navbarbg-2" href="#">portfolio</a>
+  <a class="nav-link navbarbg-3" href="#">spotlight</a>
+  <a class="nav-link navbarbg-1" href="#">contact</a>
+</nav>
 
-<div class="body-content">
-	<img src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><br>
-		<img src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><br>
-		<img src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><br>
-		<img src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><br>
-		<img src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><br>
-		<img src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"><br>
-	</div>
-</body>
+<!-- Mobile navigation trigger & overlay (CSS-only, checkbox hack) -->
+<input type="checkbox" id="mobnav-toggle" style="display:none;">
+<label class="iconmobile" for="mobnav-toggle" aria-label="Open navigation"></label>
+<div class="nav-lightbox-overlay">
+  <label for="mobnav-toggle" style="cursor:pointer; color:#fff; font-size:2rem; position:absolute; top:2rem; right:2rem;" aria-label="Close navigation">&times;</label>
+  <nav>
+    <a class="nav-link navbarbg-1" href="#">about</a>
+    <a class="nav-link navbarbg-2" href="#">portfolio</a>
+    <a class="nav-link navbarbg-3" href="#">spotlight</a>
+    <a class="nav-link navbarbg-1" href="#">contact</a>
+  </nav>
+</div>
+	
+	<div class="content-container">
+			<section class="gallery-grid">
+			  <!-- Image 1 -->
+			  <input type="checkbox" id="lightbox-1" class="lightbox-toggle" style="display:none;">
+			  <div class="grid-box">
+				<label for="lightbox-1" class="grid-box-label">
+				  <img src="imgs/art1.jpg" alt="Art 1" />
+				</label>
+				<div class="lightbox-overlay">
+				  <label for="lightbox-1" class="lightbox-close">&times;</label>
+				  <img src="imgs/art1.jpg" alt="Art 1 Enlarged">
+				</div>
+			  </div>
+			  <!-- Image 2 -->
+			  <input type="checkbox" id="lightbox-2" class="lightbox-toggle" style="display:none;">
+			  <div class="grid-box">
+				<label for="lightbox-2" class="grid-box-label">
+				  <img src="imgs/art2.jpg" alt="Art 2" />
+				</label>
+				<div class="lightbox-overlay">
+				  <label for="lightbox-2" class="lightbox-close">&times;</label>
+				  <img src="imgs/art2.jpg" alt="Art 2 Enlarged">
+				</div>
+			  </div>
+			  <!-- Image 3 -->
+			  <input type="checkbox" id="lightbox-3" class="lightbox-toggle" style="display:none;">
+			  <div class="grid-box">
+				<label for="lightbox-3" class="grid-box-label">
+				  <img src="imgs/art3.jpg" alt="Art 3" />
+				</label>
+				<div class="lightbox-overlay">
+				  <label for="lightbox-3" class="lightbox-close">&times;</label>
+				  <img src="imgs/art3.jpg" alt="Art 3 Enlarged">
+				</div>
+			  </div>
+			  <!-- Repeat for more images -->
+			</section>
+		</div>
+	</body>
 </html>
