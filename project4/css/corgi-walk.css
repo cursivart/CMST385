@@ -10,6 +10,7 @@ html, body {
   width: 100vw;
   overflow-x: hidden;
   font-family: "Genos", sans-serif;
+	background-color: #E1F2A2;
 }
 
 body {
@@ -29,6 +30,13 @@ body {
 	margin: auto;
 	position: relative;
 	top: 50vh;
+	filter: none;
+  	transition: filter 200ms;
+	filter: drop-shadow(0rem 0rem 10rem #EBFC72);
+    }
+
+#lottieMascot:hover {
+	filter: hue-rotate(120deg) drop-shadow(0rem 0rem 10rem #EBFC72);
     }
 /* =================== FONT RULES ======================= */
 

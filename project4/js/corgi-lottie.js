@@ -1,8 +1,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       var mascotContainer = document.getElementById('lottieMascot');
       if (!mascotContainer) return; // skip if absent
-      mascotContainer.style.width = "100px";
-      mascotContainer.style.height = "100px";
+      mascotContainer.style.width = "200px";
+      mascotContainer.style.height = "200px";
       var mascotAnim = null;
       const REMOTE_JSON = 'https://cmst385-umgc-cstacy3.azurewebsites.net/project4/imgs/corgi-json/corgi-data.json';
       const GITHUB_RAW = 'https://raw.githubusercontent.com/cursivart/CMST385/main/project4/imgs/corgi-json/corgi-data.json';
