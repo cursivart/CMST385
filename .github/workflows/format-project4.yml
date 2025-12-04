@@ -1,0 +1,32 @@
+name: Format project4 with Prettier
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Run Prettier (format project4)
+        run: |
+          # use npx so we don't need a package installation step
+          npx --yes prettier --write "project4/**/*.{html,css,js}"
+
+      - name: Commit formatted files
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: 'github-actions'
+          author_email: '41898282+github-actions[bot]@users.noreply.github.com'
+          message: 'chore: format project4 with Prettier (action)'
+          add: 'project4/**/*.{html,css,js}'
+          push: true
