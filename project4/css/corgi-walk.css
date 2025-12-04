@@ -33,9 +33,10 @@ body {
 	margin: auto;
 	position: relative;
 	top: 50vh;
-	filter: none;
-	transition: filter 200ms;
-	filter: drop-shadow(0rem 0rem 10rem #ebfc72);
+	/* include hue-rotate at 0deg so the browser can interpolate the angle smoothly */
+	filter: hue-rotate(0deg) drop-shadow(0rem 0rem 10rem #ebfc72);
+	/* longer duration and easing for a gradual color shift */
+	transition: filter 600ms ease;
 }
 
 #lottieMascot:hover {
@@ -62,16 +63,16 @@ h2 {
 	font-size: 2.2rem;
 }
 h3 {
-	font-size: 1.7rem;
+	font-size: 1.8rem;
 }
 h4 {
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 }
 h5 {
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 h6 {
-	font-size: 0.98rem;
+	font-size: 0.8rem;
 }
 
 p,
@@ -93,8 +94,7 @@ nav,
 .icon {
 	font-family: 'Genos', sans-serif;
 	font-weight: 600;
-	letter-spacing: 0.04em;
-	font-size: 1.05rem;
+	font-size: 1rem;
 	text-transform: lowercase;
 }
 
@@ -105,7 +105,6 @@ input[type='submit'],
 .button {
 	font-family: 'Genos', sans-serif;
 	font-weight: 600;
-	letter-spacing: 0.04em;
 	font-size: 1rem;
 	text-transform: uppercase;
 }
@@ -136,14 +135,6 @@ cite {
 	font-style: italic;
 }
 
-pre,
-code,
-kbd,
-samp {
-	font-family: 'Genos', 'Fira Mono', 'Consolas', monospace;
-	font-size: 1em;
-}
-
 table,
 th,
 td {
@@ -157,14 +148,6 @@ ol,
 li {
 	font-family: 'Genos', sans-serif;
 	font-size: 1rem;
-}
-
-small,
-.small,
-.footnote {
-	font-family: 'Genos', sans-serif;
-	font-size: 0.82em;
-	color: #333;
 }
 
 strong,

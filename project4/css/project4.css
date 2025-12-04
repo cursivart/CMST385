@@ -49,16 +49,16 @@ h2 {
 	font-size: 2.2rem;
 }
 h3 {
-	font-size: 1.7rem;
+	font-size: 1.8rem;
 }
 h4 {
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 }
 h5 {
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 h6 {
-	font-size: 0.98rem;
+	font-size: 0.8rem;
 }
 
 p,
@@ -66,7 +66,7 @@ p,
 .main-content {
 	font-family: 'Genos', sans-serif;
 	font-size: 1rem;
-	line-height: 1.6;
+	line-height: 1.5;
 	font-weight: 400;
 }
 
@@ -80,8 +80,7 @@ nav,
 .icon {
 	font-family: 'Genos', sans-serif;
 	font-weight: 600;
-	letter-spacing: 0.04em;
-	font-size: 1.05rem;
+	font-size: 1rem;
 	text-transform: lowercase;
 }
 
@@ -92,7 +91,6 @@ input[type='submit'],
 .button {
 	font-family: 'Genos', sans-serif;
 	font-weight: 600;
-	letter-spacing: 0.04em;
 	font-size: 1rem;
 	text-transform: uppercase;
 }
@@ -128,7 +126,7 @@ code,
 kbd,
 samp {
 	font-family: 'Genos', 'Fira Mono', 'Consolas', monospace;
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 table,
@@ -150,7 +148,7 @@ small,
 .small,
 .footnote {
 	font-family: 'Genos', sans-serif;
-	font-size: 0.82em;
+	font-size: 0.8rem;
 	color: #333;
 }
 
@@ -293,7 +291,7 @@ footer {
 	display: flex;
 	flex-direction: row;
 	overflow: hidden;
-	box-shadow: 0 2px 18px #0001;
+	box-shadow: 0 1rem 5rem #0001;
 }
 
 .about-left {
