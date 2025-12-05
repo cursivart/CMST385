@@ -232,7 +232,7 @@ i {
 
 .icon-spacer {
 	width: 100%;
-	height: 200px;
+	height: 100px;
 	flex-shrink: 0;
 	pointer-events: none;
 }
