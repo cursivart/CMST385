@@ -144,6 +144,12 @@ li {
 	font-size: 1rem;
 }
 
+hr {
+	border: none;
+	height: 1px;
+	background-color: #9DC6C1;
+}
+
 strong,
 b {
 	font-family: 'Genos', sans-serif;
@@ -300,10 +306,11 @@ footer {
 
 /* About info table moved from inline styles */
 .about-info-table {
-	background-color: #9DC6C1;
+	background-color: #EBFC72;
 	border-collapse: collapse;
 	width: 90%;
 	margin: auto;
+	border-radius: .5rem;
 }
 .about-info-table td {
 	border: none;
