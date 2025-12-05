@@ -311,6 +311,14 @@ footer {
 	text-align: center;
 }
 
+/* Image styling for about-right (moved from inline in about.html) */
+.about-right img {
+	border-radius: 1rem;
+	width: 90%;
+	display: block;
+	margin: auto;
+}
+
 .content-container {
 	position: relative;
 	width: calc(100vw - 15vw);
