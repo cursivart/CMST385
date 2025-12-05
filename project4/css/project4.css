@@ -307,7 +307,9 @@ footer {
 }
 .about-info-table td {
 	border: none;
-	padding: 0.75rem;
+	padding: 0.5rem;
+	border-radius: 1rem;
+	line-height: 1rem;
 	text-align: center;
 }
 
