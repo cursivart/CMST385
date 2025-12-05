@@ -298,6 +298,19 @@ footer {
 	border-left: 1px solid #9dc6c1;
 }
 
+/* About info table moved from inline styles */
+.about-info-table {
+	background-color: #9DC6C1;
+	border-collapse: collapse;
+	width: 90%;
+	margin: auto;
+}
+.about-info-table td {
+	border: none;
+	padding: 0.75rem;
+	text-align: center;
+}
+
 .content-container {
 	position: relative;
 	width: calc(100vw - 15vw);
